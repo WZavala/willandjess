@@ -9,5 +9,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="us">Will & Jess</h1>
+  {% image '@WillAndJessRespondBundle/Resources/public/images/wandj.png' %}
+    <img src="{{ asset_url }}" class="us" alt="Will & Jess" />
+  {% endimage %}
 {% endblock %}
