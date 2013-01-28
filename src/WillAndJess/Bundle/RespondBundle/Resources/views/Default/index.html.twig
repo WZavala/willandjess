@@ -2,6 +2,12 @@
 
 {% block title %}Will & Jess{% endblock %}
 
+{% block stylesheets %}
+  {% stylesheets '@WillAndJessRespondBundle/Resources/public/css/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+{% endblock %}
+
 {% block body %}
-    Will & Jess
+    <h1 class="us">Will & Jess</h1>
 {% endblock %}

@@ -1,0 +1,21 @@
+@import url('http://fonts.googleapis.com/css?family=Bangers');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.us {
+  font-family: 'Bangers', cursive;
+  font-size: 6em;
+  line-height: 6em;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  margin-top: -3em;
+  font-weight: normal;
+}
