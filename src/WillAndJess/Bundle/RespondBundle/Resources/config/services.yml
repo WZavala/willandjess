@@ -1,0 +1,7 @@
+parameters:
+#    will_and_jess_respond.example.class: WillAndJess\Bundle\RespondBundle\Example
+
+services:
+#    will_and_jess_respond.example:
+#        class: %will_and_jess_respond.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
