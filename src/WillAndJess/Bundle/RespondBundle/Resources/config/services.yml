@@ -1,7 +1,11 @@
 parameters:
-#    will_and_jess_respond.example.class: WillAndJess\Bundle\RespondBundle\Example
+    will_and_jess_respond.twitter.class: WillAndJess\Bundle\RespondBundle\Service\Twitter
+    will_and_jess_respond.twitter.consumer_key: ~
+    will_and_jess_respond.twitter.consumer_secret: ~
+    will_and_jess_respond.twitter.access_key: ~
+    will_and_jess_respond.twitter.access_key_secret: ~
 
 services:
-#    will_and_jess_respond.example:
-#        class: %will_and_jess_respond.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    will_and_jess_respond.twitter:
+       class: %will_and_jess_respond.twitter.class%
+       arguments: [%will_and_jess_respond.twitter.consumer_key%, %will_and_jess_respond.twitter.consumer_secret%, %will_and_jess_respond.twitter.access_key%, %will_and_jess_respond.twitter.access_key_secret%]
