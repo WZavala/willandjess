@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle;
+namespace WillAndJess\RespondBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

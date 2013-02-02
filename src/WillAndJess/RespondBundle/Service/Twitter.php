@@ -1,14 +1,14 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle\Service;
+namespace WillAndJess\RespondBundle\Service;
 
 use Guzzle\Http\Client;
 use Guzzle\Plugin\Oauth\OauthPlugin;
 use Guzzle\Http\Exception\BadResponseException;
 use Doctrine\ORM\EntityManager;
 
-use WillAndJess\Bundle\RespondBundle\Entity\TwitterTweet;
-use WillAndJess\Bundle\RespondBundle\Entity\TwitterUser;
+use WillAndJess\RespondBundle\Entity\TwitterTweet;
+use WillAndJess\RespondBundle\Entity\TwitterUser;
 
 class Twitter {
     
@@ -35,7 +35,7 @@ class Twitter {
     public function findSaveTweets($query = '')
     {
     
-      $repository = $this->em->getRepository('WillAndJess\Bundle\RespondBundle\Entity\TwitterTweet');
+      $repository = $this->em->getRepository('WillAndJess\RespondBundle\Entity\TwitterTweet');
       $latest = $repository->findMostRecent();
       $latest_id = ($latest) ? $latest->getID() : 0;
       $statuses = $this->findTweets($query, $latest_id);
@@ -81,7 +81,7 @@ class Twitter {
     public function saveTweets($statuses = array())
     {
       
-      $repository = $this->em->getRepository('WillAndJess\Bundle\RespondBundle\Entity\TwitterUser');
+      $repository = $this->em->getRepository('WillAndJess\RespondBundle\Entity\TwitterUser');
       
       foreach ($statuses as $status) {
       

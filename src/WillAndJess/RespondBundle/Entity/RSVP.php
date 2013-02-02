@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle\Entity;
+namespace WillAndJess\RespondBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;

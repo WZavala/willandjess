@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle\Entity;
+namespace WillAndJess\RespondBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -91,10 +91,10 @@ class TwitterUser
     /**
      * Add tweet
      *
-     * @param \WillAndJess\Bundle\RespondBundle\Entity\TwitterTweet $tweet
+     * @param \WillAndJess\RespondBundle\Entity\TwitterTweet $tweet
      * @return Place
      */
-    public function addTweet(\WillAndJess\Bundle\RespondBundle\Entity\TwitterTweet $tweet)
+    public function addTweet(\WillAndJess\RespondBundle\Entity\TwitterTweet $tweet)
     {
         $this->tweet[] = $tweet;
     
@@ -104,9 +104,9 @@ class TwitterUser
     /**
      * Remove tweet
      *
-     * @param \WillAndJess\Bundle\RespondBundle\Entity\TwitterTweet $tweet
+     * @param \WillAndJess\RespondBundle\Entity\TwitterTweet $tweet
      */
-    public function removeTweet(\WillAndJess\Bundle\RespondBundle\Entity\TwitterTweet $tweet)
+    public function removeTweet(\WillAndJess\RespondBundle\Entity\TwitterTweet $tweet)
     {
         $this->tweet->removeElement($tweet);
     }

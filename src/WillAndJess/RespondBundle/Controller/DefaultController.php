@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle\Controller;
+namespace WillAndJess\RespondBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;

@@ -1,12 +1,12 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle\Entity;
+namespace WillAndJess\RespondBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
 
 /**
- * WillAndJess\Bundle\RespondBundle\Entity\TwitterTweetRepository
+ * WillAndJess\RespondBundle\Entity\TwitterTweetRepository
  *
  */
 class TwitterTweetRepository extends EntityRepository

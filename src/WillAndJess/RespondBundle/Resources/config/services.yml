@@ -1,5 +1,5 @@
 parameters:
-    will_and_jess_respond.twitter.class: WillAndJess\Bundle\RespondBundle\Service\Twitter
+    will_and_jess_respond.twitter.class: WillAndJess\RespondBundle\Service\Twitter
     will_and_jess_respond.twitter.consumer_key: ~
     will_and_jess_respond.twitter.consumer_secret: ~
     will_and_jess_respond.twitter.access_key: ~

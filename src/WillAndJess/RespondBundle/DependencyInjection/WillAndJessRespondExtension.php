@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle\DependencyInjection;
+namespace WillAndJess\RespondBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

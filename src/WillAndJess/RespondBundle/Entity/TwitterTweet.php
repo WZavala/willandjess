@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\Bundle\RespondBundle\Entity;
+namespace WillAndJess\RespondBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Tweet
  *
  * @ORM\Table(name="twitter_tweet")
- * @ORM\Entity(repositoryClass="WillAndJess\Bundle\RespondBundle\Entity\TwitterTweetRepository")
+ * @ORM\Entity(repositoryClass="WillAndJess\RespondBundle\Entity\TwitterTweetRepository")
  */
 class TwitterTweet
 {
@@ -67,10 +67,10 @@ class TwitterTweet
     /**
      * Set user
      *
-     * @param \WillAndJess\Bundle\RespondBundle\Entity\TwitterUser $user
+     * @param \WillAndJess\RespondBundle\Entity\TwitterUser $user
      * @return TwitterTweet
      */
-    public function setUser(\WillAndJess\Bundle\RespondBundle\Entity\TwitterUser $user)
+    public function setUser(\WillAndJess\RespondBundle\Entity\TwitterUser $user)
     {
         $this->user = $user;
     
