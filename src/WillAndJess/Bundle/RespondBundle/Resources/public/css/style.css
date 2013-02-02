@@ -1,24 +1,6 @@
 
 @import url('http://fonts.googleapis.com/css?family=La+Belle+Aurore');
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 100%;
-  margin: 3em auto 0 auto;
-  padding: 0 1em;
-}
-
-.us {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 200px;
-}
-
 .tweets {
   margin-top: 2.5em;
   text-align: center;
@@ -45,10 +27,6 @@ body {
 }
 
 @media only screen and (min-width: 600px) {
-
-  .container {
-    width: 600px;
-  }
   
   .tweets {
     font-size: 1.5em;

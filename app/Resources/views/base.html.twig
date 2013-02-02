@@ -2,12 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Will & Jess{% endblock %}</title>
+        {% stylesheets '../app/Resources/public/css/*' %}
+          <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+          <div id="page">
+            {% block page %}
+              <div id="logo">
+                {% block logo %}
+                  {% image '../app/Resources/public/images/wandj.png' %}
+                      <img src="{{ asset_url }}" class="us" alt="Will & Jess" />
+                  {% endimage %}
+                {% endblock %}
+              </div>
+              <div id="content">
+                {% block content %}{% endblock %}
+              </div>
+            {% endblock %}
+          </div>
+        {% endblock %}
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
