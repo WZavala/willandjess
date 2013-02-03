@@ -1,7 +1,0 @@
-will_and_jess_respond_homepage:
-    pattern:  /
-    defaults: { _controller: WillAndJessRespondBundle:Default:index }
-    
-will_and_jess_respond_tweets:
-    pattern:  /tweets
-    defaults: { _controller: WillAndJessRespondBundle:Default:tweets }

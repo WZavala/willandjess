@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\RespondBundle\Controller;
+namespace Wedding\RespondBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -9,12 +9,12 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-      return $this->render('WillAndJessRespondBundle:Default:index.html.twig');
+      return $this->render('WeddingRespondBundle:Default:index.html.twig');
     }
     
     public function tweetsAction()
     {
-      $twitter = $this->get('will_and_jess_respond.twitter');
+      $twitter = $this->get('wedding_respond.twitter');
       $tweets = $twitter->findSaveTweets('#TheZavalaWedding');
       
       $response = new JsonResponse();

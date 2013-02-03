@@ -1,0 +1,11 @@
+parameters:
+    wedding_respond.twitter.class: Wedding\RespondBundle\Service\Twitter
+    wedding_respond.twitter.consumer_key: ~
+    wedding_respond.twitter.consumer_secret: ~
+    wedding_respond.twitter.access_key: ~
+    wedding_respond.twitter.access_key_secret: ~
+
+services:
+    wedding_respond.twitter:
+       class: %wedding_respond.twitter.class%
+       arguments: [@doctrine.orm.entity_manager, %wedding_respond.twitter.consumer_key%, %wedding_respond.twitter.consumer_secret%, %wedding_respond.twitter.access_key%, %wedding_respond.twitter.access_key_secret%]

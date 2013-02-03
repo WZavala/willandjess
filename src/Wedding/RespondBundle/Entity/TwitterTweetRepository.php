@@ -1,12 +1,12 @@
 <?php
 
-namespace WillAndJess\RespondBundle\Entity;
+namespace Wedding\RespondBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
 
 /**
- * WillAndJess\RespondBundle\Entity\TwitterTweetRepository
+ * Wedding\RespondBundle\Entity\TwitterTweetRepository
  *
  */
 class TwitterTweetRepository extends EntityRepository
@@ -15,7 +15,7 @@ class TwitterTweetRepository extends EntityRepository
   public function findMostRecent()
   {
       $em = $this->getEntityManager();
-      $query = $em->createQuery('SELECT t FROM WillAndJessRespondBundle:TwitterTweet t ORDER BY t.id DESC')->setMaxResults(1);
+      $query = $em->createQuery('SELECT t FROM WeddingRespondBundle:TwitterTweet t ORDER BY t.id DESC')->setMaxResults(1);
       
       try {
         $result = $query->getSingleResult();
@@ -31,7 +31,7 @@ class TwitterTweetRepository extends EntityRepository
   public function findRecent($limit = 15)
   {
       $em = $this->getEntityManager();
-      $query = $em->createQuery('SELECT t FROM WillAndJessRespondBundle:TwitterTweet t ORDER BY t.created DESC')->setMaxResults($limit);
+      $query = $em->createQuery('SELECT t FROM WeddingRespondBundle:TwitterTweet t ORDER BY t.created DESC')->setMaxResults($limit);
       
       $result = $query->getResult();
       

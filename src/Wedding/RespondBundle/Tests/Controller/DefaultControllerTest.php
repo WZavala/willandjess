@@ -1,6 +1,6 @@
 <?php
 
-namespace WillAndJess\RespondBundle\Tests\Controller;
+namespace Wedding\RespondBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
