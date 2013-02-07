@@ -7,7 +7,9 @@
           <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
+        {% image '../app/Resources/public/images/wandj.png' %}
+          <link rel="icon" type="image/png" href="{{ asset_url }}" />
+        {% endimage %}
     </head>
     <body>
         {% block body %}
