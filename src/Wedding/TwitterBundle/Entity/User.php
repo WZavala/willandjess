@@ -1,6 +1,6 @@
 <?php
 
-namespace Wedding\RespondBundle\Entity;
+namespace Wedding\TwitterBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="twitter_user")
  * @ORM\Entity
  */
-class TwitterUser
+class User
 {
     /**
      * @var integer
@@ -29,7 +29,7 @@ class TwitterUser
     private $username;
     
     /**
-     * @ORM\OneToMany(targetEntity="TwitterTweet", mappedBy="tweet", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Tweet", mappedBy="tweet", cascade={"all"})
      */
     private $tweet;
     
@@ -45,7 +45,7 @@ class TwitterUser
      * Set id
      *
      * @param integer $id
-     * @return TwitterUser
+     * @return User
      */
     public function setID($id)
     {
@@ -69,7 +69,7 @@ class TwitterUser
      * Set username
      *
      * @param string $username
-     * @return TwitterUser
+     * @return User
      */
     public function setUsername($username)
     {
@@ -91,10 +91,10 @@ class TwitterUser
     /**
      * Add tweet
      *
-     * @param \Wedding\RespondBundle\Entity\TwitterTweet $tweet
+     * @param \Wedding\TwitterBundle\Entity\Tweet $tweet
      * @return Place
      */
-    public function addTweet(\Wedding\RespondBundle\Entity\TwitterTweet $tweet)
+    public function addTweet(\Wedding\TwitterBundle\Entity\Tweet $tweet)
     {
         $this->tweet[] = $tweet;
     
@@ -104,9 +104,9 @@ class TwitterUser
     /**
      * Remove tweet
      *
-     * @param \Wedding\RespondBundle\Entity\TwitterTweet $tweet
+     * @param \Wedding\TwitterBundle\Entity\Tweet $tweet
      */
-    public function removeTweet(\Wedding\RespondBundle\Entity\TwitterTweet $tweet)
+    public function removeTweet(\Wedding\TwitterBundle\Entity\Tweet $tweet)
     {
         $this->tweet->removeElement($tweet);
     }

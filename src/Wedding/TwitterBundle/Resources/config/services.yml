@@ -1,0 +1,11 @@
+parameters:
+    wedding_twitter.twitter.class: Wedding\TwitterBundle\Service\Twitter
+    wedding_twitter.twitter.consumer_key: ~
+    wedding_twitter.twitter.consumer_secret: ~
+    wedding_twitter.twitter.access_key: ~
+    wedding_twitter.twitter.access_key_secret: ~
+
+services:
+    wedding_twitter.twitter:
+       class: %wedding_twitter.twitter.class%
+       arguments: [@doctrine.orm.entity_manager, %wedding_twitter.twitter.consumer_key%, %wedding_twitter.twitter.consumer_secret%, %wedding_twitter.twitter.access_key%, %wedding_twitter.twitter.access_key_secret%]

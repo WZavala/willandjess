@@ -1,6 +1,6 @@
 <?php
 
-namespace Wedding\RespondBundle\Entity;
+namespace Wedding\TwitterBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Tweet
  *
  * @ORM\Table(name="twitter_tweet")
- * @ORM\Entity(repositoryClass="Wedding\RespondBundle\Entity\TwitterTweetRepository")
+ * @ORM\Entity(repositoryClass="Wedding\TwitterBundle\Entity\TweetRepository")
  */
-class TwitterTweet
+class Tweet
 {
     /**
      * @var integer
@@ -21,7 +21,7 @@ class TwitterTweet
     private $id;
     
     /**
-     * @ORM\ManyToOne(targetEntity="TwitterUser", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="User", cascade={"persist"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
     private $user;
@@ -45,7 +45,7 @@ class TwitterTweet
      * Set id
      *
      * @param integer $id
-     * @return TwitterTweet
+     * @return Tweet
      */
     public function setID($id)
     {
@@ -67,10 +67,10 @@ class TwitterTweet
     /**
      * Set user
      *
-     * @param \Wedding\RespondBundle\Entity\TwitterUser $user
-     * @return TwitterTweet
+     * @param \Wedding\TwitterBundle\Entity\User $user
+     * @return Tweet
      */
-    public function setUser(\Wedding\RespondBundle\Entity\TwitterUser $user)
+    public function setUser(\Wedding\TwitterBundle\Entity\User $user)
     {
         $this->user = $user;
     
@@ -91,7 +91,7 @@ class TwitterTweet
      * Set text
      *
      * @param string $text
-     * @return TwitterTweet
+     * @return Tweet
      */
     public function setText($text)
     {

@@ -1,0 +1,35 @@
+
+@import url('http://fonts.googleapis.com/css?family=La+Belle+Aurore');
+
+.tweets {
+  margin-top: 2.5em;
+  text-align: center;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 2em;
+}
+
+.tweet {
+  display: none;
+}
+
+.tweet .from {
+  display: block;
+}
+
+.tweet a {
+  text-decoration: none;
+  font-weight: normal;
+  color: #6d6e71;
+}
+
+.tweet a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 600px) {
+  
+  .tweets {
+    font-size: 1.5em;
+  }
+
+}

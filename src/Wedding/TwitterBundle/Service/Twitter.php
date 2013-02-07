@@ -1,14 +1,14 @@
 <?php
 
-namespace Wedding\RespondBundle\Service;
+namespace Wedding\TwitterBundle\Service;
 
 use Guzzle\Http\Client;
 use Guzzle\Plugin\Oauth\OauthPlugin;
 use Guzzle\Http\Exception\BadResponseException;
 use Doctrine\ORM\EntityManager;
 
-use Wedding\RespondBundle\Entity\TwitterTweet;
-use Wedding\RespondBundle\Entity\TwitterUser;
+use Wedding\TwitterBundle\Entity\Tweet;
+use Wedding\TwitterBundle\Entity\User;
 
 class Twitter {
     
@@ -35,7 +35,7 @@ class Twitter {
     public function findSaveTweets($query = '')
     {
     
-      $repository = $this->em->getRepository('Wedding\RespondBundle\Entity\TwitterTweet');
+      $repository = $this->em->getRepository('Wedding\TwitterBundle\Entity\Tweet');
       $latest = $repository->findMostRecent();
       $latest_id = ($latest) ? $latest->getID() : 0;
       $statuses = $this->findTweets($query, $latest_id);
@@ -81,7 +81,7 @@ class Twitter {
     public function saveTweets($statuses = array())
     {
       
-      $repository = $this->em->getRepository('Wedding\RespondBundle\Entity\TwitterUser');
+      $repository = $this->em->getRepository('Wedding\TwitterBundle\Entity\User');
       
       foreach ($statuses as $status) {
       
@@ -89,13 +89,13 @@ class Twitter {
           continue;
         }
         
-        $tweet = new TwitterTweet();
+        $tweet = new Tweet();
         $tweet->setID($status['id']);
         $tweet->setCreated($status['created_at']);
         $tweet->setText($this->formatTweet($status));
                 
         if (!$user = $repository->find($status['user']['id'])) {
-          $user = new TwitterUser();
+          $user = new User();
           $user->setID($status['user']['id']);
           $user->setUsername($status['user']['screen_name']);
         }

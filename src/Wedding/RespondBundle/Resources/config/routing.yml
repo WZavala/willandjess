@@ -1,7 +1,3 @@
 wedding_respond_homepage:
     pattern:  /
     defaults: { _controller: WeddingRespondBundle:Default:index }
-    
-wedding_respond_tweets:
-    pattern:  /tweets
-    defaults: { _controller: WeddingRespondBundle:Default:tweets }
