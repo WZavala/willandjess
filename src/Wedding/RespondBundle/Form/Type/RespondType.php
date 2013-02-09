@@ -11,7 +11,14 @@ class RespondType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
     
-        $builder->add('attending', 'radio');
+        $builder->add('attending', 'choice', array(
+          'choices' => array(
+            1 => "I'm crashing your wedding. (Yes)",
+            2 => "I have to wash my hair that day. Sorry. (No)"
+          ),
+          'expanded' => TRUE,
+          'label'  => 'Coming to Celebrate?',
+        ));
         $builder->add('name', 'text');
         $builder->add('email', 'email');
         $builder->add('phone', 'text');
