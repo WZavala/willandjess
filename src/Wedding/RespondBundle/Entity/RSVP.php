@@ -56,6 +56,15 @@ class RSVP
      * @ORM\Column(name="note", type="text")
      */
     private $note;
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Song", inversedBy="rsvp")
+     * @ORM\JoinTable(name="rsvp_song",
+     *      joinColumns={@ORM\JoinColumn(name="rsvp_id", referencedColumnName="rsvp_id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="song_id", referencedColumnName="song_id")}
+     * )
+     **/
+    private $song;
 
 
     /**
@@ -183,5 +192,37 @@ class RSVP
         return $this->note;
     }
     
+     /**
+     * Add song
+     *
+     * @param \Wedding\RespondBundle\Entity\Song $song
+     * @return RSVP
+     */
+    public function addSong(\Wedding\RespondBundle\Entity\Song $song)
+    {
+        $this->song[] = $song;
+    
+        return $this;
+    }
+
+    /**
+     * Remove song
+     *
+     * @param \Wedding\RespondBundle\Entity\Song $song
+     */
+    public function removeSong(\Wedding\RespondBundle\Entity\Song $song)
+    {
+        $this->song->removeElement($song);
+    }
+
+    /**
+     * Get song
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSong()
+    {
+        return $this->song;
+    }
     
 }

@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
   
-  jQuery("#respond_songs").tokenInput('songs', {
+  jQuery("#respond_song_list").tokenInput('songs', {
     theme: "facebook"
   });
   

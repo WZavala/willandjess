@@ -32,9 +32,9 @@ class Respond
     protected $phone;
     
     /**
-     * Songs
+     * Song List
      */
-    protected $songs;
+    protected $song_list;
     
     /**
      * Note
@@ -82,14 +82,14 @@ class Respond
         return $this->phone;
     }
     
-    public function setSongs($songs)
+    public function setSongList($song_list)
     {
-        $this->songs = $songs;
+        $this->song_list = $song_list;
     }
 
-    public function getSongs()
+    public function getSongList()
     {
-        return $this->songs;
+        return $this->song_list;
     }
     
     public function setNote($note)

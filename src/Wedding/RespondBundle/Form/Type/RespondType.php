@@ -22,7 +22,7 @@ class RespondType extends AbstractType
         $builder->add('name', 'text');
         $builder->add('email', 'email');
         $builder->add('phone', 'text');
-        $builder->add('songs', 'text', array(
+        $builder->add('song_list', 'text', array(
           'label' => 'Like to Dance? (So do we)',
           'required' => FALSE,
         ));

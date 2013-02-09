@@ -29,7 +29,7 @@ class User
     private $username;
     
     /**
-     * @ORM\OneToMany(targetEntity="Tweet", mappedBy="tweet", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Tweet", mappedBy="user", cascade={"all"})
      */
     private $tweet;
     
