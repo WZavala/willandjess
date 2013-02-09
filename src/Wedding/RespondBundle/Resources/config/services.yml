@@ -1,0 +1,7 @@
+parameters:
+    wedding_respond.songfinder.class: Wedding\RespondBundle\Service\SongFinder
+
+services:
+  wedding_respond.songfinder:
+         class: %wedding_respond.songfinder.class%
+         arguments: [@doctrine.orm.entity_manager]

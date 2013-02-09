@@ -32,6 +32,11 @@ class Respond
     protected $phone;
     
     /**
+     * Songs
+     */
+    protected $songs;
+    
+    /**
      * Note
      */
     protected $note;
@@ -75,6 +80,16 @@ class Respond
     public function getPhone()
     {
         return $this->phone;
+    }
+    
+    public function setSongs($songs)
+    {
+        $this->songs = $songs;
+    }
+
+    public function getSongs()
+    {
+        return $this->songs;
     }
     
     public function setNote($note)

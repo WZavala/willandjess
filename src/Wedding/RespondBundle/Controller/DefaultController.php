@@ -4,6 +4,7 @@ namespace Wedding\RespondBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Wedding\RespondBundle\Entity\RSVP;
 use Wedding\RespondBundle\Form\Type\RespondType;
@@ -49,6 +50,19 @@ class DefaultController extends Controller
       );
       
       return $this->render('WeddingRespondBundle:Default:index.html.twig', $params);
+    }
+    
+    public function songsAction(Request $request)
+    {
+      
+      $song_finder = $this->get('wedding_respond.songfinder');
+      $songs = $song_finder->findSongs($request->get('q'));
+      
+      $response = new JsonResponse();
+      $response->setData($songs);
+      
+      return $response;
+      
     }
     
 }
