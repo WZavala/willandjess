@@ -1,0 +1,66 @@
+
+@import url(http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic);
+
+h2.page-title {
+  font-weight: normal;
+  font-family: 'Ropa Sans', sans-serif;
+  text-align: center;
+  font-size: 1.7em;
+}
+
+form.rsvp {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 1.1em;
+  font-weight: normal;
+  margin-bottom: 3em;
+}
+
+#respond > div {
+  clear: both;
+  margin-bottom: 1em;
+}
+
+form.rsvp label,
+form.rsvp input {
+  display: block;
+}
+
+form.rsvp input,
+form.rsvp textarea {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.2em;
+  width: 100%;
+  border: 1px solid #ccc;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 1.1em;
+}
+
+form.rsvp .submit {
+  margin: 1.5em 0 0 0;
+  padding: 0.4em 0;
+  background-color: #fff0bd;
+  border-color: #5b256a;
+  color: #6d6e71;
+}
+
+form.rsvp .submit:hover {
+  color: #fff;
+  background-color: #5b256a;
+}
+
+#respond_attending {
+  margin-top: 0.2em;
+}
+
+#respond_attending input {
+  padding: 0;
+  margin: 0.2em 0.4em 0 0;
+  float: left;
+  clear: both;
+  width: auto;
+  display: inline;
+}
+

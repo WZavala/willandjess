@@ -5,9 +5,9 @@ body {
 }
 
 #page {
-  width: 100%;
-  margin: 3em auto 0 auto;
+  margin: 1.5em auto 0 auto;
   padding: 0 1em;
+  position: relative;
 }
 
 .us {
@@ -21,6 +21,7 @@ body {
 @media only screen and (min-width: 600px) {
 
   #page {
+    margin-top: 3em;
     width: 600px;
   }
 
