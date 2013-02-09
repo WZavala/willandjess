@@ -5,6 +5,7 @@ namespace Wedding\RespondBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Wedding\RespondBundle\Entity\RSVP;
 use Wedding\RespondBundle\Form\Type\RespondType;
 use Wedding\RespondBundle\Form\Model\Respond;
 
@@ -24,7 +25,19 @@ class DefaultController extends Controller
         // Check to make sure the form is valid before procceding
         if ($form->isValid()) {
           
-          // Do some magic
+          $respond = $form->getData();
+          
+          $rsvp = new RSVP();
+          $rsvp->setAttending($respond->getAttending());
+          $rsvp->setName($respond->getName());
+          $rsvp->setEmail($respond->getEmail());
+          $rsvp->setPhone($respond->getPhone());
+          $rsvp->setNote($respond->getNote());
+          
+          $em = $this->getDoctrine()->getManager();
+          
+          $em->persist($rsvp);
+          $em->flush();
           
           return $this->redirect($this->generateUrl('wedding_respond_homepage'));
         }

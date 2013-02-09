@@ -14,7 +14,7 @@ class RespondType extends AbstractType
         $builder->add('attending', 'choice', array(
           'choices' => array(
             1 => "I'm crashing your wedding. (Yes)",
-            2 => "I have to wash my hair that day. Sorry. (No)"
+            0 => "I have to wash my hair that day. Sorry. (No)"
           ),
           'expanded' => TRUE,
           'label'  => 'Coming to Celebrate?',
