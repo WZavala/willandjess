@@ -13,7 +13,16 @@ use Wedding\RespondBundle\Form\Model\Respond;
 
 class DefaultController extends Controller
 {
+    
     public function indexAction(Request $request)
+    {
+      
+      $params = array();
+      
+      return $this->render('WeddingRespondBundle:Default:index.html.twig', $params);
+    }
+    
+    public function rsvpAction(Request $request)
     {
       // Build the Registration Form
       $form = $this->createForm(new RespondType(), new Respond());
@@ -57,7 +66,7 @@ class DefaultController extends Controller
           
           $em->persist($rsvp);
           $em->flush();
-                              
+          
           return $this->redirect($this->generateUrl('wedding_respond_homepage'));
         }
       
@@ -67,7 +76,7 @@ class DefaultController extends Controller
         'form' => $form->createView(),
       );
       
-      return $this->render('WeddingRespondBundle:Default:index.html.twig', $params);
+      return $this->render('WeddingRespondBundle:Default:rsvp.html.twig', $params);
     }
     
     public function songsAction(Request $request)

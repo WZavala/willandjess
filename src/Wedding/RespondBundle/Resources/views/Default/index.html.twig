@@ -1,9 +1,7 @@
 {% extends 'WeddingRespondBundle::layout.html.twig' %}
 
 {% block content %}
-  <h2 class="page-title">RSVP</h2>
-  <form class="rsvp" action="{{ path('wedding_respond_homepage') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <input class="submit" type="submit" value="Respond" />
-  </form>
+  <div class="page page-rsvp">
+    {{ render(controller("WeddingRespondBundle:Default:rsvp")) }}
+  </div>
 {% endblock %}
