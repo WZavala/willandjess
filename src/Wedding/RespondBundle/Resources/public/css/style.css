@@ -1,11 +1,17 @@
-
-@import url(http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic);
-
-h2.page-title {
+h2.title {
   font-weight: normal;
   font-family: 'Ropa Sans', sans-serif;
   text-align: center;
   font-size: 1.7em;
+}
+
+p {
+  font-family: 'Ropa Sans', sans-serif;
+  line-height: 1.3em;
+}
+
+div.page {
+  margin-bottom: 4em;
 }
 
 form.rsvp {

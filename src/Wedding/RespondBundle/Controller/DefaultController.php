@@ -79,6 +79,51 @@ class DefaultController extends Controller
       return $this->render('WeddingRespondBundle:Default:rsvp.html.twig', $params);
     }
     
+    public function gentlemenAction(Request $request)
+    {
+      
+      $params = array();
+      
+      return $this->render('WeddingRespondBundle:Default:gentlemen.html.twig', $params);
+      
+    }
+    
+    public function ladiesAction(Request $request)
+    {
+      
+      $params = array();
+      
+      return $this->render('WeddingRespondBundle:Default:ladies.html.twig', $params);
+      
+    }
+    
+    public function registryAction(Request $request)
+    {
+      
+      $params = array();
+      
+      return $this->render('WeddingRespondBundle:Default:registry.html.twig', $params);
+      
+    }
+    
+    public function accommodationsAction(Request $request)
+    {
+      
+      $params = array();
+      
+      return $this->render('WeddingRespondBundle:Default:accommodations.html.twig', $params);
+      
+    }
+    
+    public function directionsAction(Request $request)
+    {
+      
+      $params = array();
+      
+      return $this->render('WeddingRespondBundle:Default:directions.html.twig', $params);
+      
+    }
+    
     public function songsAction(Request $request)
     {
       
