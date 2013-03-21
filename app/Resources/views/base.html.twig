@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Will & Jess{% endblock %}</title>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ropa+Sans:400,400italic" />
         {% stylesheets '../app/Resources/public/css/*' %}
           <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
@@ -13,9 +14,9 @@
         <meta name="viewport" content="width=device-width,initial-scale=1" />
     </head>
     <body>
-        {% block body %}
-          <div id="page">
-            {% block page %}
+        {% block header %}
+          <header>
+            <div class="header-wrapper group">
               <div id="logo">
                 {% block logo %}
                   {% image '../app/Resources/public/images/wandj.png' %}
@@ -23,6 +24,16 @@
                   {% endimage %}
                 {% endblock %}
               </div>
+              <div id="navigation">
+                {% block navigation %}
+                {% endblock %}
+              </div>
+            </div>
+          </header>
+        {% endblock %}
+        {% block body %}
+          <div id="page">
+            {% block page %}
               <div id="content">
                 {% block content %}{% endblock %}
               </div>

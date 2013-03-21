@@ -2,10 +2,24 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #fef7ea;
+  color: #5b256a;
 }
 
+a {
+  color: #5b256a;
+}
+
+a,
+a:hover,
+a:active, 
+a:focus {
+  outline: none;
+}
+
+
 #page {
-  margin: 1.5em auto 0 auto;
+  margin: 0 auto;
   padding: 0 1em;
   position: relative;
 }
@@ -17,11 +31,88 @@ body {
   max-width: 200px;
 }
 
+/*
+ * Group
+ */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+ * Header
+ */
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255,255,255,0.9);
+}
+
+header .header-wrapper {
+  margin: 0 auto;
+  padding: 0.4em 1em;
+}
+
+/*
+ * Logo
+ */
+#logo {
+  width: 4em;
+  float: left;
+}
+
+#logo img {
+  width: 100%;
+  height: auto;
+}
+
+/*
+ * Navigation
+ */
+#navigation {
+  margin-top: 0.4em;
+  float: right;
+}
+
+#navigation ul {
+  list-style-type: none;
+}
+
+#navigation ul li {
+  float: left;
+  margin-right: 0.7em;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+#navigation ul li a {
+  text-decoration: none;
+  padding: 0.2em 0.6em;
+}
+
+#navigation ul li.current a {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #5b256a;
+  color: #fff;
+}
+
+#navigation ul li:last-child {
+  margin-right: 0;
+}
+
 
 @media only screen and (min-width: 600px) {
 
+  header .header-wrapper {
+    width: 600px;
+  }
+
   #page {
-    margin-top: 3em;
     width: 600px;
   }
 

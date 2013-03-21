@@ -1,22 +1,21 @@
 {% extends 'WeddingRespondBundle::layout.html.twig' %}
 
 {% block content %}
-  <div class="page page-rsvp">
-    {{ render(controller("WeddingRespondBundle:Default:rsvp")) }}
-  </div>
-  <div class="page page-gentlemen">
-    {{ render(controller("WeddingRespondBundle:Default:gentlemen")) }}
-  </div>
-  <div class="page page-ladies">
-    {{ render(controller("WeddingRespondBundle:Default:ladies")) }}
-  </div>
-  <div class="page page-registry">
-    {{ render(controller("WeddingRespondBundle:Default:registry")) }}
-  </div>
-  <div class="page page-accommodations">
-    {{ render(controller("WeddingRespondBundle:Default:accommodations")) }}
-  </div>
-  <div class="page page-directions">
-    {{ render(controller("WeddingRespondBundle:Default:directions")) }}
+  <div class="pages">
+    <div id="rsvp" class="page page-rsvp">
+      {{ render(controller("WeddingRespondBundle:Default:rsvp")) }}
+    </div>
+    <div id="gentlemen" class="page page-gentlemen">
+      {{ render(controller("WeddingRespondBundle:Default:gentlemen")) }}
+    </div>
+    <div id="ladies" class="page page-ladies">
+      {{ render(controller("WeddingRespondBundle:Default:ladies")) }}
+    </div>
+    <div id="registry" class="page page-registry">
+      {{ render(controller("WeddingRespondBundle:Default:registry")) }}
+    </div>
+    <div id="travel" class="page page-travel">
+      {{ render(controller("WeddingRespondBundle:Default:travel")) }}
+    </div>
   </div>
 {% endblock %}

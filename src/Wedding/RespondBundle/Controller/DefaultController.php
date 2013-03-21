@@ -106,23 +106,15 @@ class DefaultController extends Controller
       
     }
     
-    public function accommodationsAction(Request $request)
+    public function travelAction(Request $request)
     {
       
       $params = array();
       
-      return $this->render('WeddingRespondBundle:Default:accommodations.html.twig', $params);
+      return $this->render('WeddingRespondBundle:Default:travel.html.twig', $params);
       
     }
     
-    public function directionsAction(Request $request)
-    {
-      
-      $params = array();
-      
-      return $this->render('WeddingRespondBundle:Default:directions.html.twig', $params);
-      
-    }
     
     public function songsAction(Request $request)
     {
