@@ -1,10 +1,6 @@
-wedding_twitter:
-    resource: "@WeddingTwitterBundle/Resources/config/routing.yml"
-    prefix:   /
-
 wedding_respond:
     resource: "@WeddingRespondBundle/Resources/config/routing.yml"
-    prefix:   /rsvp
+    prefix:   /
 
 # Internal routing configuration to handle ESI
 # ****** WARNING ******
