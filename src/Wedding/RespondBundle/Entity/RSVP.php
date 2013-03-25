@@ -51,11 +51,26 @@ class RSVP
     private $phone;
     
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="adults", type="integer")
+     */
+    private $adults;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="children", type="integer")
+     */
+    private $children;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="note", type="text")
      */
     private $note;
+    
     
     /**
      * @ORM\ManyToMany(targetEntity="Song", inversedBy="rsvp")
@@ -167,6 +182,52 @@ class RSVP
     public function getPhone()
     {
         return $this->phone;
+    }
+    
+    /**
+     * Set adults
+     *
+     * @param int $adults
+     * @return RSVP
+     */
+    public function setAdults($adults)
+    {
+        $this->adults = $adults;
+    
+        return $this;
+    }
+
+    /**
+     * Get adults
+     *
+     * @return int
+     */
+    public function getAdults()
+    {
+        return $this->adults;
+    }
+    
+    /**
+     * Set children
+     *
+     * @param int $children
+     * @return RSVP
+     */
+    public function setChildren($children)
+    {
+        $this->children = $children;
+    
+        return $this;
+    }
+
+    /**
+     * Get children
+     *
+     * @return int
+     */
+    public function getChildren()
+    {
+        return $this->children;
     }
     
     /**

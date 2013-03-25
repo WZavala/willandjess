@@ -2,10 +2,6 @@ wedding_respond_homepage:
     pattern:  /
     defaults: { _controller: WeddingRespondBundle:Default:index }
 
-wedding_respond_rsvp:
-    pattern:  /rsvp
-    defaults: { _controller: WeddingRespondBundle:Default:rsvp }
-
 wedding_respond_songs:
     pattern:  /songs
     defaults: { _controller: WeddingRespondBundle:Default:songs }

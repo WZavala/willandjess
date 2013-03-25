@@ -26,6 +26,20 @@ class RespondType extends AbstractType
         
         $builder->add('phone', 'text');
         
+        $builder->add('adults', 'text', array(
+          'label' => 'How many adults?',
+          'attr' => array(
+            'size' => 1,
+          ),
+        ));
+        
+        $builder->add('children', 'text', array(
+          'label' => 'How many children?',
+          'attr' => array(
+            'size' => 1,
+          ),
+        ));
+        
         $builder->add('song_list', 'text', array(
           'label' => 'Like to Dance? (So do we)',
           'required' => FALSE,
@@ -33,6 +47,7 @@ class RespondType extends AbstractType
         
         $builder->add('note', 'textarea', array(
           'label' => "Anything else you'd like to say?",
+          'required' => FALSE,
         ));
         
     }

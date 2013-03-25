@@ -16,14 +16,6 @@ class DefaultController extends Controller
     
     public function indexAction(Request $request)
     {
-      
-      $params = array();
-      
-      return $this->render('WeddingRespondBundle:Default:index.html.twig', $params);
-    }
-    
-    public function rsvpAction(Request $request)
-    {
       // Build the Registration Form
       $form = $this->createForm(new RespondType(), new Respond());
       
@@ -51,6 +43,8 @@ class DefaultController extends Controller
           $rsvp->setName($respond->getName());
           $rsvp->setEmail($respond->getEmail());
           $rsvp->setPhone($respond->getPhone());
+          $rsvp->setAdults($respond->getAdults());
+          $rsvp->setChildren($respond->getChildren());
           $rsvp->setNote($respond->getNote());
                     
           $songs = $song_repository->findById($song_ids);
@@ -68,6 +62,7 @@ class DefaultController extends Controller
           $em->flush();
           
           return $this->redirect($this->generateUrl('wedding_respond_homepage'));
+          
         }
       
       }
@@ -76,7 +71,8 @@ class DefaultController extends Controller
         'form' => $form->createView(),
       );
       
-      return $this->render('WeddingRespondBundle:Default:rsvp.html.twig', $params);
+      return $this->render('WeddingRespondBundle:Default:index.html.twig', $params);
+      
     }
     
     public function gentlemenAction(Request $request)

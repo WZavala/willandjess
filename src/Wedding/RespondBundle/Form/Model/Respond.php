@@ -32,6 +32,20 @@ class Respond
     protected $phone;
     
     /**
+     * Adults
+     *
+     * @Assert\Type(type="numeric")
+     */
+    protected $adults;
+    
+    /**
+     * Children
+     *
+     * @Assert\Type(type="numeric")
+     */
+    protected $children;
+    
+    /**
      * Song List
      */
     protected $song_list;
@@ -80,6 +94,26 @@ class Respond
     public function getPhone()
     {
         return $this->phone;
+    }
+    
+    public function setAdults($adults)
+    {
+        $this->adults = $adults;
+    }
+
+    public function getAdults()
+    {
+        return $this->adults;
+    }
+    
+    public function setChildren($children)
+    {
+        $this->children = $children;
+    }
+
+    public function getChildren()
+    {
+        return $this->children;
     }
     
     public function setSongList($song_list)
