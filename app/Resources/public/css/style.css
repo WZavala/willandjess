@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fef7ea;
+  background-color: #5b256a;
   color: #5b256a;
 }
 
@@ -22,6 +22,7 @@ a:focus {
   margin: 0 auto;
   padding: 0 1em;
   position: relative;
+  background-color: #fef7ea;
 }
 
 .us {
