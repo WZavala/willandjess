@@ -2,6 +2,24 @@
 
 {% block content %}
   <div class="pages">
+    
+    <div id="photos" class="page page-photos">
+        
+        <div class="wrapper">
+        
+          <div class="carousel">
+            {% image '@WeddingRespondBundle/Resources/public/img/photos/*' %}
+                <img src="{{ asset_url }}" alt="" />
+            {% endimage %}
+          </div>
+          
+          <a href="#" class="prev" title="Show previous"> </a>
+          <a href="#" class="next" title="Show next"> </a>
+          
+        </div>
+      
+    </div>
+    
     <div id="rsvp" class="page page-rsvp">
       <h2 class="title">RSVP</h2>
       <form class="rsvp" action="{{ path('wedding_respond_homepage') }}" method="post" {{ form_enctype(form) }}>

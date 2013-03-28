@@ -14,6 +14,10 @@ div.page {
   padding-top: 5em;
 }
 
+#rsvp {
+  margin-top: 18em;
+}
+
 div.page:last-child {
   padding-bottom: 3em;
 }
@@ -73,4 +77,55 @@ form.rsvp .submit:hover {
   width: auto;
   display: inline;
 }
+
+/*
+ * Photos
+ */
+#photos .wrapper {
+  background-color: #fff;
+  width: 100%;
+  height: 421px;
+  margin-top: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 4.8em;
+  left: 0;
+}
+
+#photos .carousel img {
+  display: none;
+  float: left;
+  width: 632px;
+  height: auto;
+}
+
+.js #photos .carousel img {
+  display: block;
+}
+
+#photos .prev,
+#photos .next {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: block;
+  height: 450px;
+  width: 50%;
+  top: 0;
+  position: absolute;
+}
+
+#photos .prev:hover,
+#photos .next:hover {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#photos .prev {
+  left: -316px;
+}
+
+#photos .next {
+  right: -316px;
+}
+
+
 

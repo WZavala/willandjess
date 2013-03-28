@@ -2,8 +2,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #5b256a;
+  background-color: #fff;
   color: #5b256a;
+  padding-top: 4.8em;
+}
+
+#page-wrapper {
+  background-color: #5b256a;
 }
 
 a {
@@ -21,7 +26,6 @@ a:focus {
 #page {
   margin: 0 auto;
   padding: 0 1em;
-  position: relative;
   background-color: #fef7ea;
 }
 

@@ -1,5 +1,7 @@
 jQuery(document).ready(function() {
+
+  jQuery('body').addClass('js');
   
-  jQuery('#navigation ul').onePageNav();
+  jQuery('header').onePageNav();
   
 });
