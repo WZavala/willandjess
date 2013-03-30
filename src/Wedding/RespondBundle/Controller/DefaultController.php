@@ -67,7 +67,21 @@ class DefaultController extends Controller
       
       }
       
+      $kernel = $this->get('kernel');
+      $path = $kernel->locateResource('@WeddingRespondBundle/Resources/public/images/photos/');
+      
+      $dir = opendir($path);
+      
+      $photos = array();
+      
+      while ($filename = readdir($dir)) {
+        if (substr($filename, 0, 1) != '.') {
+          $photos[] = $filename;
+        }
+      }
+      
       $params = array(
+        'photos' => $photos,
         'form' => $form->createView(),
       );
       

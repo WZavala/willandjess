@@ -8,9 +8,9 @@
         <div class="wrapper">
         
           <div class="carousel">
-            {% image 'bundles/weddingrespond/images/photos/*' %}
-                <img src="{{ asset_url }}" alt="" />
-            {% endimage %}
+            {% for photo in photos %}
+              <img src="/bundles/weddingrespond/images/photos/{{ photo }}" alt="" />
+            {% endfor %}
           </div>
           
           <a href="#" class="prev" title="Show previous"> </a>
