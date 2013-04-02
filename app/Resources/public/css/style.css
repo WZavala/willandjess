@@ -110,6 +110,23 @@ header .header-wrapper {
   margin-right: 0;
 }
 
+/*
+ * Registery
+ */
+#registry .store {
+  margin: 2em 10em;
+}
+
+#registry .store:last-child {
+  margin-bottom: 0;
+}
+
+#registry img {
+  width: 100%;
+  height: auto;
+  margin: 2em 0;
+}
+
 
 @media only screen and (min-width: 600px) {
 
