@@ -26,17 +26,21 @@ class RespondType extends AbstractType
         
         $builder->add('phone', 'text');
         
-        $builder->add('adults', 'text', array(
+        $builder->add('adults', 'number', array(
           'label' => 'How many adults?',
           'attr' => array(
             'size' => 1,
+            'pattern' => '^\d+$',
+            'title' => '#',
           ),
         ));
         
-        $builder->add('children', 'text', array(
+        $builder->add('children', 'number', array(
           'label' => 'How many children?',
           'attr' => array(
             'size' => 1,
+            'pattern' => '^\d+$',
+            'title' => '#',
           ),
         ));
         
