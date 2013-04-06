@@ -1,0 +1,20 @@
+Attending: {% if rsvp.attending %}Yes{% else %}No{% endif %}
+
+
+Name: {{ rsvp.name }}
+
+Email: {{ rsvp.email }}
+
+Phone: {{ rsvp.phone }}
+
+Adults: {{ rsvp.adults }}
+
+Children: {{ rsvp.children }}
+
+Songs:
+{% for song in songs %}
+"{{ song.title }}" by {{ song.artist.name }}
+{% endfor %}
+
+Note:
+{{ rsvp.note }}

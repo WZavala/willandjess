@@ -61,6 +61,24 @@ class DefaultController extends Controller
           $em->persist($rsvp);
           $em->flush();
           
+          
+          // Send the Email
+          $message = \Swift_Message::newInstance();
+          $message->setSubject('RSVP');
+          $message->setFrom(array($rsvp->getEmail() => $rsvp->getName()));
+          $message->setTo(array('william.b.zavala@gmail.com' => 'William Zavala'));
+          
+          $params = array(
+            'rsvp' => $rsvp,
+            'songs' => $songs,
+          );
+          
+          $text = $this->renderView('WeddingRespondBundle:Default:email.txt.twig', $params);
+          
+          $message->setBody($text);
+          
+          $this->get('mailer')->send($message);
+          
           return $this->redirect($this->generateUrl('wedding_respond_homepage'));
           
         }
