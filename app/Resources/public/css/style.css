@@ -110,6 +110,13 @@ header .header-wrapper {
 }
 
 /*
+ * Title
+ */
+h2.title {
+  border-bottom: 1px solid #5B256A;
+}
+
+/*
  * Registery
  */
 #registry .store {
