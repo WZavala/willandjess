@@ -34,15 +34,30 @@
           </header>
         {% endblock %}
         {% block body %}
+        
           <div id="page-wrapper">
+          
             <div id="page">
               {% block page %}
                 <div id="content">
                   {% block content %}{% endblock %}
                 </div>
               {% endblock %}
+              
+              <div class="icon will">
+                {% image '../app/Resources/public/images/will.svg' %}
+                  <img src="{{ asset_url }}" alt="" />
+                {% endimage %}
+              </div>
+              <div class="icon jess">
+                {% image '../app/Resources/public/images/jess.svg' %}
+                  <img src="{{ asset_url }}" alt="" />
+                {% endimage %}
+              </div>
+              
             </div>
           </div>
+          
         {% endblock %}
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         {% javascripts '../app/Resources/public/js/*' %}

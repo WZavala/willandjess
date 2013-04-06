@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -27,6 +26,7 @@ a:focus {
   margin: 0 auto;
   padding: 0 1em;
   background-color: #fef7ea;
+  position: relative;
 }
 
 .us {
@@ -143,6 +143,27 @@ header .header-wrapper {
   height: 25em;
 }
 
+/*
+ * Icon
+ */
+.icon {
+  position: fixed;
+  bottom: 0;
+  width: auto;
+}
+
+.icon img {
+  height: 8em;
+  width: auto;
+}
+
+.icon.will {
+  margin-left: -6.8em;
+}
+
+.icon.jess {
+  margin-left: 39em;
+}
 
 @media only screen and (min-width: 600px) {
 
