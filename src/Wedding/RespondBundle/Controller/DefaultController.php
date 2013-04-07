@@ -65,8 +65,19 @@ class DefaultController extends Controller
           // Send the Email
           $message = \Swift_Message::newInstance();
           $message->setSubject('RSVP');
-          $message->setFrom(array($rsvp->getEmail() => $rsvp->getName()));
-          $message->setTo(array('william.b.zavala@gmail.com' => 'William Zavala'));
+          
+          $from = array(
+            $rsvp->getEmail() => $rsvp->getName(),
+          );
+          
+          $message->setFrom($from);
+          
+          $to = array(
+            'william.b.zavala@gmail.com' => 'William Zavala',
+            'cjessicaucf@knights.ucf.edu' => 'Jessica Collier',
+          );
+          
+          $message->setTo($to);
           
           $params = array(
             'rsvp' => $rsvp,
@@ -79,7 +90,52 @@ class DefaultController extends Controller
           
           $this->get('mailer')->send($message);
           
+          if ($request->isXmlHttpRequest()) {
+          
+            $data = array(
+              'title' => 'Thanks!',
+              'content' => $this->renderView('WeddingRespondBundle:Default:thanks.html.twig'),
+            );
+            
+            $response = new JsonResponse();
+            $response->setData($data);
+            
+            return $response;
+            
+          }
+          
+          // Set the Message
+          $this->get('session')->getFlashBag()->add('message', 'Thanks!');
+          
+          // Redirect back to the homaepage
           return $this->redirect($this->generateUrl('wedding_respond_homepage'));
+          
+        }
+        else {
+          
+          if ($request->isXmlHttpRequest()) {
+          
+            $errors = array();
+          
+            foreach ($form->all() as $child) {
+              foreach ($child->getErrors() as $error) {
+                $errors[] = array(
+                  'id' => $form->getName().'_'.$child->getName(),
+                  'text' => $error->getMessage(),
+                );
+              }
+            }
+          
+            $data = array(
+              'errors' => $errors,
+            );
+            
+            $response = new JsonResponse();
+            $response->setData($data);
+            
+            return $response;
+          
+          }
           
         }
       
@@ -104,6 +160,15 @@ class DefaultController extends Controller
       );
       
       return $this->render('WeddingRespondBundle:Default:index.html.twig', $params);
+      
+    }
+    
+    public function thanksAction(Request $request)
+    {
+      
+      $params = array();
+      
+      return $this->render('WeddingRespondBundle:Default:thanks.html.twig', $params);
       
     }
     
