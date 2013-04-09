@@ -52,7 +52,7 @@ form.rsvp .submit {
   padding: 0.4em 0;
   background-color: rgba(255,255,255,0.8);
   border-color: #5b256a;
-  color: #6d6e71;
+  color: #5b256a;
 }
 
 form.rsvp .submit:hover {
