@@ -20,6 +20,10 @@
       
     </div>
     
+    <div id="tweets" class="page page-tweets">
+      {{ render(controller("WeddingTwitterBundle:Default:index")) }}
+    </div>
+    
     <div id="rsvp" class="page page-rsvp">
       {% if app.session.flashbag.has('message') %}
         {% for flashMessage in app.session.flashbag.get('message') %}

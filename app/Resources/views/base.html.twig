@@ -4,7 +4,11 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Will & Jess{% endblock %}</title>
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ropa+Sans:400,400italic" />
-        {% stylesheets '../app/Resources/public/css/*' %}
+        {% stylesheets 
+          '../app/Resources/public/css/*'
+          '@WeddingRespondBundle/Resources/public/css/*'
+          '@WeddingTwitterBundle/Resources/public/css/*'
+        %}
           <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         {% block stylesheets %}{% endblock %}
@@ -60,7 +64,11 @@
           
         {% endblock %}
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        {% javascripts '../app/Resources/public/js/*' %}
+        {% javascripts 
+          '../app/Resources/public/js/*'
+          '@WeddingRespondBundle/Resources/public/js/*'
+          '@WeddingTwitterBundle/Resources/public/js/*'
+        %}
            <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
         {% block javascripts %}{% endblock %}

@@ -7,10 +7,11 @@ h2.title {
 
 div.page {
   padding-top: 5em;
+  margin-bottom: -3em;
 }
 
-#rsvp {
-  margin-top: 18em;
+#photos {
+  margin-bottom: 20em;
 }
 
 div.page:last-child {

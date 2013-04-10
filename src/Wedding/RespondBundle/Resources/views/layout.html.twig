@@ -1,17 +1,5 @@
 {% extends '::base.html.twig' %}
 
-{% block stylesheets %}
-  {% stylesheets '@WeddingRespondBundle/Resources/public/css/*' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-  {% endstylesheets %}
-{% endblock %}
-
-{% block javascripts %}
-  {% javascripts '@WeddingRespondBundle/Resources/public/js/*' %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-  {% endjavascripts %}
-{% endblock %}
-
 {% block navigation %}
   <nav>
     <ul>

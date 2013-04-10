@@ -2,14 +2,17 @@
 @import url('http://fonts.googleapis.com/css?family=La+Belle+Aurore');
 
 .tweets {
-  margin-top: 2.5em;
   text-align: center;
   font-family: 'La Belle Aurore', cursive;
   font-size: 1.7em;
+  line-height: 1.9em;
+  height: 8em;
 }
 
 .tweet {
   display: none;
+  margin: 0;
+  padding: 0;
 }
 
 .tweet .from {
