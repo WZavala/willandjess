@@ -7,5 +7,5 @@
 /app/logs/*
 /build/*
 /vendor/*
+/bin/
 /app/config/parameters.yml
-composer.phar
