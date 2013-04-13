@@ -4,6 +4,7 @@ jQuery(document).ready(function() {
   
   jQuery('#photos .carousel').carouFredSel({
     width: '100%',
+    transition: true,
     items: {
       visible: 3,
       start: -1
