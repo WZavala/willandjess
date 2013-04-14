@@ -21,6 +21,43 @@ jQuery(document).ready(function() {
     next: '#photos .next'
   });
   
+  jQuery('.page-people .carousel-wrapper .carousel').carouFredSel({
+    transition: true,
+    direction: 'up',
+    items: 1,
+    scroll: {
+      fx: 'directscroll'
+    },
+    auto: {
+      play: false
+    },
+    pagination: {
+      container: function() {
+        return jQuery(this).parents(".carousel-wrapper").find(".pager");
+      },
+      anchorBuilder: function( nr ) {
+        return '<div class="thumb thumb' + nr + '"><a href="#"><img src="' + this.src + '" alt="" /></a></div>';
+      },
+      onBefore: function( map ) {
+        
+      var parent = jQuery(this).parents('.page-people');
+    
+    	jQuery('.info .'+jQuery(map.items.old).attr('class'), parent).animate({
+    	  opacity: 'hide',
+        height: 'hide'
+      }, 'slow');
+    	
+    	jQuery('.info .'+jQuery(map.items.visible).attr('class'), parent).animate({
+          opacity: 'show',
+          height: 'show'
+        }, 'slow');
+        
+      }
+      
+    }
+  });
+
+  
   // Hendle the From Submit
   jQuery('form.rsvp').on('submit' , function(event) {
   

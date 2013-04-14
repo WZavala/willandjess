@@ -166,45 +166,94 @@ class DefaultController extends Controller
     public function thanksAction(Request $request)
     {
       
-      $params = array();
-      
-      return $this->render('WeddingRespondBundle:Default:thanks.html.twig', $params);
+      return $this->render('WeddingRespondBundle:Default:thanks.html.twig');
       
     }
     
-    public function gentlemenAction(Request $request)
+    public function peopleAction(Request $request, $who)
     {
-      
-      $params = array();
-      
-      return $this->render('WeddingRespondBundle:Default:gentlemen.html.twig', $params);
-      
-    }
     
-    public function ladiesAction(Request $request)
-    {
+      $title = '';
+      $people = array();
       
-      $params = array();
+      if ($who == 'ladies') {
+        
+        $title = 'Ladies';
+        
+        $people = array(
+          'jess' => array(
+            'image' => 'http://lorempixel.com/250/250/cats/?v=jess',
+            'name' => 'Jessica Collier',
+            'title' => 'Bride',
+            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+            'social' => array(
+              'facebook' => 'jessica.collier.99',
+              'twitter' => 'JCol99',
+            ),
+          ),
+        );
+        
+      }
+      elseif ($who == 'gentlemen') {
+        
+        $title = 'Gentlemen';
+        
+        $people = array(
+          'will' => array(
+            'image' => 'http://lorempixel.com/250/250/cats/?v=will',
+            'name' => 'William Zavala',
+            'title' => 'Groom',
+            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+            'social' => array(
+              'facebook' => 'Alavaz',
+              'twitter' => 'FunnyMSB',
+            ),
+          ),
+          'david' => array(
+            'image' => '/bundles/weddingrespond/images/people/david.jpg',
+            'name' => 'David Barratt',
+            'title' => 'Groomsman',
+            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+            'social' => array(
+              'facebook' => 'davidbarratt',
+              'twitter' => 'davidwbarratt',
+            ),
+          ),
+          'josh' => array(
+            'image' => 'http://lorempixel.com/250/250/cats/?v=josh',
+            'name' => 'Josh Shearer',
+            'title' => 'Groomsman',
+            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+            'social' => array(
+              'facebook' => 'graciaman',
+              'twitter' => 'graciaman',
+            ),
+          ),
+        );
+        
+        
+      }
       
-      return $this->render('WeddingRespondBundle:Default:ladies.html.twig', $params);
+      $params = array(
+        'title' => $title,
+        'people' => $people,
+      );
+            
+      return $this->render('WeddingRespondBundle:Default:people.html.twig', $params);
       
     }
     
     public function registryAction(Request $request)
     {
       
-      $params = array();
-      
-      return $this->render('WeddingRespondBundle:Default:registry.html.twig', $params);
+      return $this->render('WeddingRespondBundle:Default:registry.html.twig');
       
     }
     
     public function travelAction(Request $request)
     {
       
-      $params = array();
-      
-      return $this->render('WeddingRespondBundle:Default:travel.html.twig', $params);
+      return $this->render('WeddingRespondBundle:Default:travel.html.twig');
       
     }
     

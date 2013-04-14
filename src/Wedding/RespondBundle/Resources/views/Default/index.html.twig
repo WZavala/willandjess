@@ -41,12 +41,12 @@
       {% endif %}
     </div>
     
-    <div id="gentlemen" class="page page-gentlemen">
-      {{ render(controller("WeddingRespondBundle:Default:gentlemen")) }}
+    <div id="gentlemen" class="page page-people page-gentlemen">
+      {{ render(controller("WeddingRespondBundle:Default:people", { 'who': 'gentlemen' })) }}
     </div>
     
-    <div id="ladies" class="page page-ladies">
-      {{ render(controller("WeddingRespondBundle:Default:ladies")) }}
+    <div id="ladies" class="page page-people page-ladies">
+      {{ render(controller("WeddingRespondBundle:Default:people", { 'who': 'ladies' })) }}
     </div>
     
     <div id="registry" class="page page-registry">
