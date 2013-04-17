@@ -62,7 +62,7 @@ class DefaultController extends Controller
           $em->flush();
           
           
-          // Send the Email
+          // Send the Email to Will & Jess
           $message = \Swift_Message::newInstance();
           $message->setSubject('RSVP');
           
@@ -72,12 +72,12 @@ class DefaultController extends Controller
           
           $message->setFrom($from);
           
-          $to = array(
+          $bridegroom = array(
             'william.b.zavala@gmail.com' => 'William Zavala',
             'cjessicaucf@knights.ucf.edu' => 'Jessica Collier',
           );
           
-          $message->setTo($to);
+          $message->setTo($bridegroom);
           
           $params = array(
             'rsvp' => $rsvp,
@@ -90,11 +90,30 @@ class DefaultController extends Controller
           
           $this->get('mailer')->send($message);
           
+          // Send the Email to the User
+          $title = ($rsvp->getAttending()) ? 'Yay! :)' : 'Aww! :(';
+          
+          $message = \Swift_Message::newInstance();
+          $message->setSubject($title);
+          $message->setFrom($bridegroom);
+          $message->setTo($rsvp->getEmail());
+          
+          $params = array(
+            'attending' => $rsvp->getAttending(),
+          );
+          
+          $content = $this->renderView('WeddingRespondBundle:Default:thanks.html.twig', $params);
+          
+          $message->setBody($content, 'text/html');
+          
+          $this->get('mailer')->send($message);
+          
+          
           if ($request->isXmlHttpRequest()) {
           
             $data = array(
-              'title' => 'Thanks!',
-              'content' => $this->renderView('WeddingRespondBundle:Default:thanks.html.twig'),
+              'title' => $title,
+              'content' => $content,
             );
             
             $response = new JsonResponse();
@@ -105,8 +124,13 @@ class DefaultController extends Controller
           }
           
           // Set the Message
-          $this->get('session')->getFlashBag()->add('message', 'Thanks!');
-          
+          if ($rsvp->getAttending()) {
+            $this->get('session')->getFlashBag()->add('message', $title);
+          }
+          else {
+            $this->get('session')->getFlashBag()->add('notice', $title);
+          }
+                    
           // Redirect back to the homaepage
           return $this->redirect($this->generateUrl('wedding_respond_homepage'));
           
@@ -163,10 +187,14 @@ class DefaultController extends Controller
       
     }
     
-    public function thanksAction(Request $request)
+    public function thanksAction(Request $request, $attending = TRUE)
     {
       
-      return $this->render('WeddingRespondBundle:Default:thanks.html.twig');
+      $params = array(
+        'attending' => $attending,
+      );
+      
+      return $this->render('WeddingRespondBundle:Default:thanks.html.twig', $params);
       
     }
     

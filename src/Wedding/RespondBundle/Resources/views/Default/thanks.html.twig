@@ -1,5 +1,9 @@
-<p>Last Minute Reminders:</p>
-<ol>
-  <li>Please reserve your hotel (at the bottom of the page) by May 4th. Just say that you are with the Jessica Collier or Will Zavala wedding. </li>
-  <li>Have fun by tweeting before and the day of with the <a href="https://twitter.com/search?q=%23TheZavalaWedding" target="_blank">#TheZavalaWedding</a> hashtag</li>
-</ol>
+{% if attending %}
+  <p>Last Minute Reminders:</p>
+  <ol>
+    <li>Please reserve your hotel (at the bottom of the page) by May 4th. Just say that you are with the Jessica Collier or Will Zavala wedding. </li>
+    <li>Have fun by tweeting before and the day of with the <a href="https://twitter.com/search?q=%23TheZavalaWedding" target="_blank">#TheZavalaWedding</a> hashtag</li>
+  </ol>
+{% else %}
+  <p>We are sorry that you can not make it to our special day, but please feel free to send us your love by surfing down at our gift registries near the bottom of the page. People that participate will surely get a handwritten note from Jess and I as well as all the love in the world&hellip;well only the bits that we are not sharing with one another.</p>
+{% endif %}

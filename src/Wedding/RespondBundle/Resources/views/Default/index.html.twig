@@ -29,7 +29,14 @@
         {% for flashMessage in app.session.flashbag.get('message') %}
           <h2 class="title">{{ flashMessage }}</h2>
           <div class="body">
-            {{ render(controller("WeddingRespondBundle:Default:thanks")) }}
+            {{ render(controller("WeddingRespondBundle:Default:thanks", { 'attending': true })) }}
+          </div>
+        {% endfor %}
+      {% elseif app.session.flashbag.has('notice') %}
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+          <h2 class="title">{{ flashMessage }}</h2>
+          <div class="body">
+            {{ render(controller("WeddingRespondBundle:Default:thanks", { 'attending': false })) }}
           </div>
         {% endfor %}
       {% else %}
