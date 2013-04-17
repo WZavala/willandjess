@@ -5,7 +5,11 @@
     <div class="wrapper">
     <div class="carousel">
       {% for key, person in people %}
-        <img src="{{ person.image }}" class="person-{{ key }}" />
+        {% if person.image is defined %}
+          <img src="{{ person.image }}" class="person-{{ key }}" title="{{ person.name }}" />
+        {% elseif person.social.facebook is defined %}
+          <img src="https://graph.facebook.com/{{ person.social.facebook }}/picture?width=250&height=250" class="person-{{ key }}" title="{{ person.name }}" />
+        {% endif %}
       {% endfor %}
     </div>
     </div>

@@ -211,51 +211,71 @@ form.rsvp .submit:hover {
 }
 
 .page-people .carousel-wrapper .pager .thumb1 {
-  top: 45px;
-  margin-left: -150px;
+  top: -45px;
+  margin-left: -185px;
 }
 
 .page-people .carousel-wrapper .pager .thumb1.selected {
+  margin-top: 0;
+  margin-left: -150px;
+}
+
+.page-people .carousel-wrapper .pager .thumb2 {
+  top: 25px;
+  margin-left: -165px;
+}
+
+.page-people .carousel-wrapper .pager .thumb2.selected {
   margin-top: -10px;
   margin-left: -135px;
 }
 
-.page-people .carousel-wrapper .pager .thumb2 {
-  top: 90px;
-  margin-left: -98px;
-}
-
-.page-people .carousel-wrapper .pager .thumb2.selected {
-  margin-top: -20px;
-  margin-left: -85px;
-}
-
 .page-people .carousel-wrapper .pager .thumb3 {
-  top: 110px;
+  top: 85px;
+  margin-left: -110px
 }
 
 .page-people .carousel-wrapper .pager .thumb3.selected {
   margin-top: -20px;
+  margin-left: -90px
 }
 
 .page-people .carousel-wrapper .pager .thumb4 {
-  top: 90px;
-  margin-left: 38px;
+  top: 105px;
 }
 
 .page-people .carousel-wrapper .pager .thumb4.selected {
-  margin-top: -35px;
-  margin-left: 25px;
+  margin-top: -25px;
 }
 
 .page-people .carousel-wrapper .pager .thumb5 {
-  top: 45px;
-  margin-left: 90px;
+  top: 85px;
+  margin-left: 50px;
 }
 
 .page-people .carousel-wrapper .pager .thumb5.selected {
   margin-top: -20px;
-  margin-left: 55px;
+  margin-left: 25px;
+}
+
+.page-people .carousel-wrapper .pager .thumb6 {
+  top: 25px;
+  margin-left: 105px;
+}
+
+.page-people .carousel-wrapper .pager .thumb6.selected {
+  margin-top: -10px;
+  margin-left: 75px;
+}
+
+.page-people .carousel-wrapper .pager .thumb7 {
+  top: -45px;
+  margin-left: 120px;
+}
+
+.page-people .carousel-wrapper .pager .thumb7.selected {
+  margin-top: 0;
+  margin-left: 90px;
 }
 
 .page-people .people {

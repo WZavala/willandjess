@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
         return jQuery(this).parents(".carousel-wrapper").find(".pager");
       },
       anchorBuilder: function( nr ) {
-        return '<div class="thumb thumb' + nr + '"><a href="#"><img src="' + this.src + '" alt="" /></a></div>';
+        return '<div class="thumb thumb' + nr + '"><a href="#"><img src="' + this.src + '" alt="" title="' + this.title + '" /></a></div>';
       },
       onBefore: function( map ) {
         

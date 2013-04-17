@@ -209,14 +209,62 @@ class DefaultController extends Controller
         $title = 'Ladies';
         
         $people = array(
-          'jess' => array(
-            'image' => 'http://lorempixel.com/250/250/cats/?v=jess',
-            'name' => 'Jessica Collier',
-            'title' => 'Bride',
-            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+          'jennifer' => array(
+            'name' => 'Jennifer Black',
+            'image' => 'http://lorempixel.com/250/250/cats/?v=jennifer',
+            'title' => 'Maid of Honor',
+            'desc' => $this->renderView('WeddingRespondBundle:People:jennifer.html.twig'),
+            'social' => array(),
+          ),
+          'jocelyn' => array(
+            'name' => 'Jocelyn Hofstede ',
+            'title' => 'Bridesmaid',
+            'desc' => $this->renderView('WeddingRespondBundle:People:jocelyn.html.twig'),
             'social' => array(
-              'facebook' => 'jessica.collier.99',
-              'twitter' => 'JCol99',
+              'facebook' => 'jocelyn.davidson.1',
+            ),
+          ),
+          'paige' => array(
+            'image' => '/bundles/weddingrespond/images/people/paige.jpg',
+            'name' => 'Paige Warga',
+            'title' => 'Bridesmaid',
+            'desc' => $this->renderView('WeddingRespondBundle:People:paige.html.twig'),
+            'social' => array(
+              'facebook' => 'paige.warga'
+            ),
+          ),
+          'kristen' => array(
+            'image' => '/bundles/weddingrespond/images/people/kristen.jpg',
+            'name' => 'Kristen Hicks',
+            'title' => 'Bridesmaid',
+            'desc' => $this->renderView('WeddingRespondBundle:People:kristen.html.twig'),
+            'social' => array(
+              'facebook' => 'kristen.hicks.395',
+            ),
+          ),
+          'dina' => array(
+            'image' => '/bundles/weddingrespond/images/people/dina.jpg',
+            'name' => 'Dina Kennedy',
+            'title' => 'Bridesmaid',
+            'desc' => $this->renderView('WeddingRespondBundle:People:dina.html.twig'),
+            'social' => array(
+              'facebook' => 'dinak90',
+            ),
+          ),
+          'alyssa' => array(
+            'name' => 'Alyssa Boddie',
+            'title' => 'Bridesmaid',
+            'desc' => $this->renderView('WeddingRespondBundle:People:alyssa.html.twig'),
+            'social' => array(
+              'facebook' => 'alyssa.boddie',
+            ),
+          ),
+          'nicole' => array(
+            'name' => 'Alyssa Boddie',
+            'title' => 'Bridesmaid',
+            'desc' => $this->renderView('WeddingRespondBundle:People:nicole.html.twig'),
+            'social' => array(
+              'facebook' => 'nicole.joseph.792',
             ),
           ),
         );
@@ -227,34 +275,63 @@ class DefaultController extends Controller
         $title = 'Gentlemen';
         
         $people = array(
-          'will' => array(
-            'image' => 'http://lorempixel.com/250/250/cats/?v=will',
-            'name' => 'William Zavala',
-            'title' => 'Groom',
-            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+          'matt' => array(
+            'name' => 'Matt Shuler',
+            'title' => 'Groomsman',
+            'desc' => $this->renderView('WeddingRespondBundle:People:matt.html.twig'),
             'social' => array(
-              'facebook' => 'Alavaz',
-              'twitter' => 'FunnyMSB',
+              'facebook' => 'shulermatt',
+            ),
+          ),
+          'andrew' => array(
+            'name' => 'Andrew Tungate',
+            'title' => 'Groomsman',
+            'desc' => $this->renderView('WeddingRespondBundle:People:andrew.html.twig'),
+            'social' => array(
+              'facebook' => 'atungate',
+            ),
+          ),
+          'jonathan' => array(
+            'name' => 'Jonathan Goodwin',
+            'title' => 'Groomsman',
+            'desc' => $this->renderView('WeddingRespondBundle:People:jonathan.html.twig'),
+            'social' => array(
+              'facebook' => 'jon.j.goodwin'
             ),
           ),
           'david' => array(
-            'image' => '/bundles/weddingrespond/images/people/david.jpg',
             'name' => 'David Barratt',
             'title' => 'Groomsman',
-            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+            'desc' => $this->renderView('WeddingRespondBundle:People:david.html.twig'),
             'social' => array(
               'facebook' => 'davidbarratt',
               'twitter' => 'davidwbarratt',
             ),
           ),
+          'brandon' => array(
+            'name' => 'Brandon Davis',
+            'title' => 'Groomsman',
+            'desc' => $this->renderView('WeddingRespondBundle:People:brandon.html.twig'),
+            'social' => array(
+              'facebook' => '100001487503542'
+            ),
+          ),
           'josh' => array(
-            'image' => 'http://lorempixel.com/250/250/cats/?v=josh',
             'name' => 'Josh Shearer',
             'title' => 'Groomsman',
-            'desc' => "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>",
+            'desc' => $this->renderView('WeddingRespondBundle:People:josh.html.twig'),
             'social' => array(
               'facebook' => 'graciaman',
               'twitter' => 'graciaman',
+            ),
+          ),
+          'matt_f' => array(
+            'name' => 'Matt Furlong',
+            'title' => 'Groomsman',
+            'desc' => $this->renderView('WeddingRespondBundle:People:matt_f.html.twig'),
+            'social' => array(
+              'facebook' => 'mattfurlong11',
+              'twitter' => 'ucfmatt',
             ),
           ),
         );
