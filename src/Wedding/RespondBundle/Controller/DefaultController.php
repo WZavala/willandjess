@@ -284,11 +284,13 @@ class DefaultController extends Controller
             ),
           ),
           'andrew' => array(
+            'image' => '/bundles/weddingrespond/images/people/andrew.jpg',
             'name' => 'Andrew Tungate',
             'title' => 'Groomsman',
             'desc' => $this->renderView('WeddingRespondBundle:People:andrew.html.twig'),
             'social' => array(
               'facebook' => 'atungate',
+              'twitter' => 'andrewstungate',
             ),
           ),
           'jonathan' => array(
