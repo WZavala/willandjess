@@ -210,13 +210,14 @@ class DefaultController extends Controller
         
         $people = array(
           'jennifer' => array(
+            'image' => '/bundles/weddingrespond/images/people/jennifer.jpg',
             'name' => 'Jennifer Black',
-            'image' => 'http://lorempixel.com/250/250/cats/?v=jennifer',
             'title' => 'Maid of Honor',
             'desc' => $this->renderView('WeddingRespondBundle:People:jennifer.html.twig'),
             'social' => array(),
           ),
           'jocelyn' => array(
+            'image' => '/bundles/weddingrespond/images/people/jocelyn.jpg',
             'name' => 'Jocelyn Hofstede ',
             'title' => 'Bridesmaid',
             'desc' => $this->renderView('WeddingRespondBundle:People:jocelyn.html.twig'),
