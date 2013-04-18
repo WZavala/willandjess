@@ -260,7 +260,7 @@ class DefaultController extends Controller
             ),
           ),
           'nicole' => array(
-            'name' => 'Alyssa Boddie',
+            'name' => 'Nicole Joseph',
             'title' => 'Bridesmaid',
             'desc' => $this->renderView('WeddingRespondBundle:People:nicole.html.twig'),
             'social' => array(
