@@ -26,6 +26,18 @@ class SendUpdateCommand extends ContainerAwareCommand
         $message = \Swift_Message::newInstance();
         $message->setSubject('Wedding');
         
+        $mailer = $this->getContainer()->get('mailer');
+        
+        $transport = $mailer->getTransport();
+        if (!$transport instanceof \Swift_Transport_SpoolTransport) {
+            return;
+        }
+        
+        $spool = $transport->getSpool();
+        if (!$spool instanceof \Swift_MemorySpool) {
+            return;
+        }
+        
         $from = array(
            'william.b.zavala@gmail.com' => 'William Zavala',
         );
@@ -41,8 +53,6 @@ class SendUpdateCommand extends ContainerAwareCommand
         
         $message->setBody($text);
         
-        $mailer = $this->getContainer()->get('mailer');
-        
         $em = $this->getContainer()->get('doctrine')->getManager();
         
         $repository = $this->getContainer()->get('doctrine')->getRepository('Wedding\RespondBundle\Entity\RSVP');
@@ -57,22 +67,17 @@ class SendUpdateCommand extends ContainerAwareCommand
             $rsvp->getEmail() => $rsvp->getName(),
           );
           
+          $output->writeln($rsvp->getEmail());
+          
           $message->setTo($to);
+          
+          $output->writeln($message->getTo());
+          
           $sent += $mailer->send($message);
           
+          $spool->flushQueue($this->getContainer()->get('swiftmailer.transport.real'));
+          
         }
-                
-        $transport = $mailer->getTransport();
-        if (!$transport instanceof \Swift_Transport_SpoolTransport) {
-            return;
-        }
-        
-        $spool = $transport->getSpool();
-        if (!$spool instanceof \Swift_MemorySpool) {
-            return;
-        }
-        
-        $spool->flushQueue($this->getContainer()->get('swiftmailer.transport.real'));
         
         $output->writeln('Sent '.$sent.' messages');
         
