@@ -24,7 +24,7 @@ class SendUpdateCommand extends ContainerAwareCommand
     
         // Send the Email to Will & Jess
         $message = \Swift_Message::newInstance();
-        $message->setSubject('RSVP');
+        $message->setSubject('Wedding');
         
         $from = array(
            'william.b.zavala@gmail.com' => 'William Zavala',
