@@ -1,0 +1,7 @@
+wedding_twitter_homepage:
+    pattern:  /
+    defaults: { _controller: WeddingTwitterBundle:Default:index }
+
+wedding_twitter_tweets:
+    pattern:  /tweets
+    defaults: { _controller: WeddingTwitterBundle:Default:tweets }

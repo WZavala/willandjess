@@ -1,0 +1,3 @@
+wedding_respond_homepage:
+    pattern:  /
+    defaults: { _controller: WeddingRespondBundle:Default:index }
