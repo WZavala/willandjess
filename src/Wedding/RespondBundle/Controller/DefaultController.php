@@ -210,13 +210,14 @@ class DefaultController extends Controller
         
         $people = array(
           'jennifer' => array(
+            'image' => '/bundles/weddingrespond/images/people/jennifer.jpg',
             'name' => 'Jennifer Black',
-            'image' => 'http://lorempixel.com/250/250/cats/?v=jennifer',
             'title' => 'Maid of Honor',
             'desc' => $this->renderView('WeddingRespondBundle:People:jennifer.html.twig'),
             'social' => array(),
           ),
           'jocelyn' => array(
+            'image' => '/bundles/weddingrespond/images/people/jocelyn.jpg',
             'name' => 'Jocelyn Hofstede ',
             'title' => 'Bridesmaid',
             'desc' => $this->renderView('WeddingRespondBundle:People:jocelyn.html.twig'),
@@ -260,7 +261,7 @@ class DefaultController extends Controller
             ),
           ),
           'nicole' => array(
-            'name' => 'Alyssa Boddie',
+            'name' => 'Nicole Joseph',
             'title' => 'Bridesmaid',
             'desc' => $this->renderView('WeddingRespondBundle:People:nicole.html.twig'),
             'social' => array(
@@ -284,11 +285,13 @@ class DefaultController extends Controller
             ),
           ),
           'andrew' => array(
+            'image' => '/bundles/weddingrespond/images/people/andrew.jpg',
             'name' => 'Andrew Tungate',
             'title' => 'Groomsman',
             'desc' => $this->renderView('WeddingRespondBundle:People:andrew.html.twig'),
             'social' => array(
               'facebook' => 'atungate',
+              'twitter' => 'andrewstungate',
             ),
           ),
           'jonathan' => array(
