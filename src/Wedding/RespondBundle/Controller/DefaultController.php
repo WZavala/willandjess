@@ -95,6 +95,7 @@ class DefaultController extends Controller
           
           $message = \Swift_Message::newInstance();
           $message->setSubject($title);
+          unset($bridegroom['cjessicaucf@knights.ucf.edu']);
           $message->setFrom($bridegroom);
           $message->setTo($rsvp->getEmail());
           
