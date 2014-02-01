@@ -3,32 +3,74 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Will & Jess{% endblock %}</title>
-        {% stylesheets '../app/Resources/public/css/*' %}
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|La+Belle+Aurore" />
+        {% stylesheets 
+          '../app/Resources/public/css/*'
+          '@WeddingRespondBundle/Resources/public/css/*'
+          '@WeddingTwitterBundle/Resources/public/css/*'
+        %}
           <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         {% block stylesheets %}{% endblock %}
         {% image '../app/Resources/public/images/wandj.png' %}
           <link rel="icon" type="image/png" href="{{ asset_url }}" />
         {% endimage %}
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1" /> -->
     </head>
-    <body>
-        {% block body %}
-          <div id="page">
-            {% block page %}
+    <body id="home">
+        {% block header %}
+          <header>
+            <div class="header-wrapper group">
               <div id="logo">
                 {% block logo %}
                   {% image '../app/Resources/public/images/wandj.png' %}
+                    <a href="#home">
                       <img src="{{ asset_url }}" class="us" alt="Will & Jess" />
+                    </a>
                   {% endimage %}
                 {% endblock %}
               </div>
-              <div id="content">
-                {% block content %}{% endblock %}
+              <div id="navigation">
+                {% block navigation %}
+                {% endblock %}
               </div>
-            {% endblock %}
+            </div>
+          </header>
+        {% endblock %}
+        {% block body %}
+        
+          <div id="page-wrapper">
+          
+            <div id="page">
+              {% block page %}
+                <div id="content">
+                  {% block content %}{% endblock %}
+                </div>
+              {% endblock %}
+              
+              <div class="icon will">
+                {% image '../app/Resources/public/images/will.svg' %}
+                  <img src="{{ asset_url }}" alt="" />
+                {% endimage %}
+              </div>
+              <div class="icon jess">
+                {% image '../app/Resources/public/images/jess.svg' %}
+                  <img src="{{ asset_url }}" alt="" />
+                {% endimage %}
+              </div>
+              
+            </div>
           </div>
+          
         {% endblock %}
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        {% javascripts 
+          '../app/Resources/public/js/*'
+          '@WeddingRespondBundle/Resources/public/js/*'
+          '@WeddingTwitterBundle/Resources/public/js/*'
+        %}
+           <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

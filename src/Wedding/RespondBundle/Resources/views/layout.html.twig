@@ -1,13 +1,13 @@
 {% extends '::base.html.twig' %}
 
-{% block stylesheets %}
-  {% stylesheets '@WeddingRespondBundle/Resources/public/css/*' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-  {% endstylesheets %}
-{% endblock %}
-
-{% block javascripts %}
-  {% javascripts '@WeddingRespondBundle/Resources/public/js/*' %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-  {% endjavascripts %}
+{% block navigation %}
+  <nav>
+    <ul>
+        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#gentlemen">Gentleman</a></li>
+        <li><a href="#ladies">Ladies</a></li>
+        <li><a href="#registry">Registry</a></li>
+        <li><a href="#travel">Travel</a></li>
+    </ul>
+  </nav>
 {% endblock %}

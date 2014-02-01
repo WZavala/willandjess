@@ -1,5 +1,68 @@
 {% extends 'WeddingRespondBundle::layout.html.twig' %}
 
 {% block content %}
-
+  <div class="pages">
+    
+    <div id="photos" class="page page-photos">
+        
+        <div class="wrapper">
+        
+          <div class="carousel">
+            {% for photo in photos %}
+              <img src="/bundles/weddingrespond/images/photos/{{ photo }}" alt="" />
+            {% endfor %}
+          </div>
+          
+          <a href="#" class="prev" title="Show previous"> </a>
+          <a href="#" class="next" title="Show next"> </a>
+          
+        </div>
+      
+    </div>
+    
+    <div id="tweets" class="page page-tweets">
+      {{ render(controller("WeddingTwitterBundle:Default:index")) }}
+    </div>
+    
+    <div id="rsvp" class="page page-rsvp">
+      {% if app.session.flashbag.has('message') %}
+        {% for flashMessage in app.session.flashbag.get('message') %}
+          <h2 class="title">{{ flashMessage }}</h2>
+          <div class="body">
+            {{ render(controller("WeddingRespondBundle:Default:thanks", { 'attending': true })) }}
+          </div>
+        {% endfor %}
+      {% elseif app.session.flashbag.has('notice') %}
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+          <h2 class="title">{{ flashMessage }}</h2>
+          <div class="body">
+            {{ render(controller("WeddingRespondBundle:Default:thanks", { 'attending': false })) }}
+          </div>
+        {% endfor %}
+      {% else %}
+        <h2 class="title">RSVP</h2>
+        <form class="rsvp" action="{{ path('wedding_respond_homepage') }}" method="post" {{ form_enctype(form) }}>
+          {{ form_widget(form) }}
+          <input class="submit" type="submit" value="Respond" />
+        </form>
+      {% endif %}
+    </div>
+    
+    <div id="gentlemen" class="page page-people page-gentlemen">
+      {{ render(controller("WeddingRespondBundle:Default:people", { 'who': 'gentlemen' })) }}
+    </div>
+    
+    <div id="ladies" class="page page-people page-ladies">
+      {{ render(controller("WeddingRespondBundle:Default:people", { 'who': 'ladies' })) }}
+    </div>
+    
+    <div id="registry" class="page page-registry">
+      {{ render(controller("WeddingRespondBundle:Default:registry")) }}
+    </div>
+    
+    <div id="travel" class="page page-travel">
+      {{ render(controller("WeddingRespondBundle:Default:travel")) }}
+    </div>
+    
+  </div>
 {% endblock %}

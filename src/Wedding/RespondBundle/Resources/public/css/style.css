@@ -1,0 +1,300 @@
+h2.title {
+  font-weight: normal;
+  font-family: 'Ropa Sans', sans-serif;
+  text-align: center;
+  font-size: 1.7em;
+}
+
+div.page {
+  padding-top: 5em;
+  margin-bottom: -3em;
+}
+
+#photos {
+  margin-bottom: 20em;
+}
+
+div.page:last-child {
+  padding-bottom: 3em;
+}
+
+form.rsvp {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 1.1em;
+  font-weight: normal;
+  margin-bottom: 3em;
+}
+
+#respond > div {
+  clear: both;
+  margin-bottom: 1em;
+}
+
+form.rsvp label,
+form.rsvp input {
+  display: block;
+}
+
+form.rsvp input,
+form.rsvp textarea {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.2em;
+  width: 100%;
+  border: 1px solid #ccc;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 1.1em;
+}
+
+form.rsvp .submit {
+  margin: 1.5em 0 0 0;
+  padding: 0.4em 0;
+  background-color: rgba(255,255,255,0.8);
+  border-color: #5b256a;
+  color: #5b256a;
+}
+
+form.rsvp .submit:hover {
+  color: #fff;
+  background-color: #5b256a;
+}
+
+#respond_attending {
+  margin-top: 0.2em;
+}
+
+#respond_attending input {
+  padding: 0;
+  margin: 0.2em 0.4em 0 0;
+  float: left;
+  clear: both;
+  width: auto;
+  display: inline;
+}
+
+/*
+ * Photos
+ */
+#photos .wrapper {
+  background-color: #fff;
+  width: 100%;
+  height: 421px;
+  margin-top: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 4.8em;
+  left: 0;
+}
+
+#photos .carousel img {
+  display: none;
+  float: left;
+  width: 632px;
+  height: auto;
+}
+
+.js #photos .carousel img {
+  display: block;
+}
+
+#photos .prev,
+#photos .next {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: block;
+  height: 450px;
+  width: 50%;
+  top: 0;
+  position: absolute;
+}
+
+#photos .prev:hover,
+#photos .next:hover {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#photos .prev {
+  left: -316px;
+}
+
+#photos .next {
+  right: -316px;
+}
+
+/*
+ * People
+ */
+.page-people {
+  min-height: 300px;
+}
+ 
+.page-people .carousel-wrapper {
+  position: relative;
+  margin: 4em auto 0 auto;
+  width: 300px;
+  height: 300px;
+}
+
+.page-people .carousel-wrapper .border,
+.page-people .carousel-wrapper .wrapper {
+  border-radius: 200px;
+  overflow: hidden;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+}
+
+.page-people .carousel-wrapper .border {
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+  border: 25px solid #eee;
+  margin: -15px 0 0 0;
+  z-index: 0;
+  position: absolute;
+}
+
+.page-people .carousel-wrapper .wrapper {
+  border: 10px solid #eee;
+  margin: 0 0 0 15px;
+  z-index: 2;
+}
+
+.page-people .carousel-wrapper .caroufredsel_wrapper {
+  position: static !important;
+  -webkit-backface-visibility: hidden;
+}
+
+.page-people .carousel-wrapper .carousel img {
+  display: block;
+  float: left;
+  height: 250px;
+  width: 250px;
+}
+
+.page-people .carousel-wrapper .pager-wrapper {
+  width: 300px;
+  margin: 150px 0 0 0;
+  position: absolute;
+  z-index: 1;
+}
+ 
+.page-people .carousel-wrapper .pager {
+ -webkit-backface-visibility: hidden;
+}
+
+.page-people .carousel-wrapper .pager .thumb {
+  border: 5px solid #eee;
+  border-radius: 30px;
+  overflow: hidden;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 0 0 -30px;
+  position: absolute;
+  left: 50%;
+  -webkit-transition: margin 0.5s ease;
+  -moz-transition: margin 0.5s ease;
+  transition: margin 0.5s ease;
+  -webkit-backface-visibility: hidden;
+}
+
+.page-people .carousel-wrapper .pager .thumb a {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.page-people .carousel-wrapper .pager .thumb img {
+  width: 50px;
+  height: 50px;
+}
+
+.page-people .carousel-wrapper .pager .thumb1 {
+  top: -45px;
+  margin-left: -185px;
+}
+
+.page-people .carousel-wrapper .pager .thumb1.selected {
+  margin-top: 0;
+  margin-left: -150px;
+}
+
+.page-people .carousel-wrapper .pager .thumb2 {
+  top: 25px;
+  margin-left: -165px;
+}
+
+.page-people .carousel-wrapper .pager .thumb2.selected {
+  margin-top: -10px;
+  margin-left: -135px;
+}
+
+.page-people .carousel-wrapper .pager .thumb3 {
+  top: 85px;
+  margin-left: -110px
+}
+
+.page-people .carousel-wrapper .pager .thumb3.selected {
+  margin-top: -20px;
+  margin-left: -90px
+}
+
+.page-people .carousel-wrapper .pager .thumb4 {
+  top: 105px;
+}
+
+.page-people .carousel-wrapper .pager .thumb4.selected {
+  margin-top: -25px;
+}
+
+.page-people .carousel-wrapper .pager .thumb5 {
+  top: 85px;
+  margin-left: 50px;
+}
+
+.page-people .carousel-wrapper .pager .thumb5.selected {
+  margin-top: -20px;
+  margin-left: 25px;
+}
+
+.page-people .carousel-wrapper .pager .thumb6 {
+  top: 25px;
+  margin-left: 105px;
+}
+
+.page-people .carousel-wrapper .pager .thumb6.selected {
+  margin-top: -10px;
+  margin-left: 75px;
+}
+
+.page-people .carousel-wrapper .pager .thumb7 {
+  top: -45px;
+  margin-left: 120px;
+}
+
+.page-people .carousel-wrapper .pager .thumb7.selected {
+  margin-top: 0;
+  margin-left: 90px;
+}
+
+.page-people .people {
+  padding-top: 1em;
+}
+
+.page-people .people .person {
+  display: none;
+}
+
+.page-people .people .person:first-child {
+  display: block;
+}
+
+.page-people .people .person h3,
+.page-people .people .person h4 {
+  text-align: center;
+}
+
+.page-people .people .person .social {
+  text-align: center;
+}

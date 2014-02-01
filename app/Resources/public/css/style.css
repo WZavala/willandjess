@@ -1,13 +1,37 @@
-
 body {
   margin: 0;
   padding: 0;
+  background-color: #fff;
+  color: #5b256a;
+  padding-top: 4.8em;
+  font-family: 'Ropa Sans', sans-serif;
+  line-height: 1.3em;
 }
 
+#page-wrapper {
+  background-color: #5b256a;
+}
+
+a {
+  color: #5b256a;
+}
+
+li  {
+  margin-bottom: 0.7em;
+}
+
+a,
+a:hover,
+a:active, 
+a:focus {
+  outline: none;
+}
+
+
 #page {
-  width: 100%;
-  margin: 3em auto 0 auto;
+  margin: 0 auto;
   padding: 0 1em;
+  background-color: #fef7ea;
 }
 
 .us {
@@ -17,8 +41,147 @@ body {
   max-width: 200px;
 }
 
+/*
+ * Group
+ */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+ * Header
+ */
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255,255,255,0.9);
+}
+
+header .header-wrapper {
+  margin: 0 auto;
+  padding: 0.4em 1em;
+}
+
+/*
+ * Logo
+ */
+#logo {
+  width: 4em;
+  float: left;
+}
+
+#logo img {
+  width: 100%;
+  height: auto;
+}
+
+/*
+ * Navigation
+ */
+#navigation {
+  margin-top: 0.4em;
+  float: right;
+}
+
+#navigation ul {
+  list-style-type: none;
+}
+
+#navigation ul li {
+  float: left;
+  margin-right: 0.7em;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+#navigation ul li a {
+  text-decoration: none;
+  padding: 0.2em 0.6em;
+}
+
+#navigation ul li.current a {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #5b256a;
+  color: #fff;
+}
+
+#navigation ul li:last-child {
+  margin-right: 0;
+}
+
+/*
+ * Title
+ */
+h2.title {
+  border-bottom: 1px solid #5B256A;
+}
+
+/*
+ * Registery
+ */
+#registry .store {
+  margin: 2em auto;
+  width: 50%;
+}
+
+#registry .store:last-child {
+  margin-bottom: 0;
+}
+
+#registry img {
+  width: 100%;
+  height: auto;
+  margin: 2em 0;
+}
+
+/*
+ * Travel
+ */
+#travel .body .map {
+  margin: 0 -1em;
+} 
+
+#travel .body iframe {
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 25em;
+}
+
+/*
+ * Icon
+ */
+.icon {
+  position: fixed;
+  bottom: 0;
+  width: auto;
+}
+
+.icon img {
+  height: 16em;
+  width: auto;
+}
+
+.icon.will {
+  margin-left: -11.8em;
+}
+
+.icon.jess {
+  margin-left: 39em;
+}
 
 @media only screen and (min-width: 600px) {
+
+  header .header-wrapper {
+    width: 600px;
+  }
 
   #page {
     width: 600px;

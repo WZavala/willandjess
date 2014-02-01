@@ -51,11 +51,35 @@ class RSVP
     private $phone;
     
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="adults", type="integer")
+     */
+    private $adults;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="children", type="integer")
+     */
+    private $children;
+    
+    /**
      * @var string
      *
-     * @ORM\Column(name="note", type="text")
+     * @ORM\Column(name="note", type="text", nullable=true)
      */
     private $note;
+    
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Song", inversedBy="rsvp")
+     * @ORM\JoinTable(name="rsvp_song",
+     *      joinColumns={@ORM\JoinColumn(name="rsvp_id", referencedColumnName="rsvp_id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="song_id", referencedColumnName="song_id")}
+     * )
+     **/
+    private $song;
 
 
     /**
@@ -161,6 +185,52 @@ class RSVP
     }
     
     /**
+     * Set adults
+     *
+     * @param int $adults
+     * @return RSVP
+     */
+    public function setAdults($adults)
+    {
+        $this->adults = $adults;
+    
+        return $this;
+    }
+
+    /**
+     * Get adults
+     *
+     * @return int
+     */
+    public function getAdults()
+    {
+        return $this->adults;
+    }
+    
+    /**
+     * Set children
+     *
+     * @param int $children
+     * @return RSVP
+     */
+    public function setChildren($children)
+    {
+        $this->children = $children;
+    
+        return $this;
+    }
+
+    /**
+     * Get children
+     *
+     * @return int
+     */
+    public function getChildren()
+    {
+        return $this->children;
+    }
+    
+    /**
      * Set note
      *
      * @param string $note
@@ -183,5 +253,37 @@ class RSVP
         return $this->note;
     }
     
+     /**
+     * Add song
+     *
+     * @param \Wedding\RespondBundle\Entity\Song $song
+     * @return RSVP
+     */
+    public function addSong(\Wedding\RespondBundle\Entity\Song $song)
+    {
+        $this->song[] = $song;
+    
+        return $this;
+    }
+
+    /**
+     * Remove song
+     *
+     * @param \Wedding\RespondBundle\Entity\Song $song
+     */
+    public function removeSong(\Wedding\RespondBundle\Entity\Song $song)
+    {
+        $this->song->removeElement($song);
+    }
+
+    /**
+     * Get song
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSong()
+    {
+        return $this->song;
+    }
     
 }

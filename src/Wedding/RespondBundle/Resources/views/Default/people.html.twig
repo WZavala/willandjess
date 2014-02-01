@@ -1,0 +1,46 @@
+<h2 class="title">{{ title }}</h2>
+<div class="body">
+  <div class="carousel-wrapper">
+    <div class="border"></div>
+    <div class="wrapper">
+    <div class="carousel">
+      {% for key, person in people %}
+        {% if person.image is defined %}
+          <img src="{{ person.image }}" class="person-{{ key }}" title="{{ person.name }}" />
+        {% elseif person.social.facebook is defined %}
+          <img src="https://graph.facebook.com/{{ person.social.facebook }}/picture?width=250&height=250" class="person-{{ key }}" title="{{ person.name }}" />
+        {% endif %}
+      {% endfor %}
+    </div>
+    </div>
+    <div class="pager-wrapper">
+      <div class="pager"></div>
+    </div>
+  </div>
+  <div class="info">
+    <div class="people">
+      {% for key, person in people %}
+        <div class="person person-{{ key }}">
+          <h3>{{ person.name }}</h3>
+          <h4>{{ person.title }}</h4>
+          <div class="description">
+            {{ person.desc|raw }}
+          </div>
+          <p class="social">
+            {% for key, social in person.social %}
+              {% if key == 'facebook' %}
+                <a href="https://www.facebook.com/{{ social}}" target="_blank">Facebook</a>
+              {% endif %}
+              {% if key == 'twitter' %}
+                <a href="https://twitter.com/{{ social}}" target="_blank">Twitter</a>
+              {% endif %}
+              {% if loop.last == false %}
+                <span> | </span>
+              {% endif %}
+            {% endfor %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
