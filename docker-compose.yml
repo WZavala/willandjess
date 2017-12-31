@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./
+      # Buildling needs access to all of the environment variables.
+      args:
+        - SYMFONY_ENV
+        - SYMFONY_DEBUG
+        - SYMFONY__SECRET
+        - SYMFONY__DATABASE_URL
+        - SYMFONY__MAILER_URL
+        - SYMFONY__WEDDING_TWITTER__TWITTER__CONSUMER_KEY
+        - SYMFONY__WEDDING_TWITTER__TWITTER__CONSUMER_SECRET
+        - SYMFONY__WEDDING_TWITTER__TWITTER__ACCESS_KEY
+        - SYMFONY__WEDDING_TWITTER__TWITTER__ACCESS_KEY_SECRET
+    image: wzavala/willandjess
+    env_file:
+      - .env
+  cache:
+    image: davidbarratt/varnish
+    environment:
+      - VIRTUAL_HOST=willandjess.us,www.willandjess.us,origin.willandjess.us
+    links:
+      - web:backend

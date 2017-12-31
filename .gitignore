@@ -1,11 +1,10 @@
-/web/bundles/*
-/web/css/*
-/web/js/*
-/web/images/*
+.env
+/html/bundles/*
+/html/css/*
+/html/js/*
+/html/images/*
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
 /build/*
 /vendor/*
-/bin/
-/app/config/parameters.yml

@@ -1,0 +1,20 @@
+PassEnv SYMFONY_ENV
+PassEnv SYMFONY_DEBUG
+PassEnv SYMFONY__SECRET
+PassEnv SYMFONY__DATABASE_URL
+PassEnv SYMFONY__MAILER_URL
+PassEnv SYMFONY__WEDDING_TWITTER__TWITTER__CONSUMER_KEY
+PassEnv SYMFONY__WEDDING_TWITTER__TWITTER__CONSUMER_SECRET
+PassEnv SYMFONY__WEDDING_TWITTER__TWITTER__ACCESS_KEY
+PassEnv SYMFONY__WEDDING_TWITTER__TWITTER__ACCESS_KEY_SECRET
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    #<IfModule mod_vhost_alias.c>
+    #    RewriteBase /
+    #</IfModule>
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.php [QSA,L]
+</IfModule>

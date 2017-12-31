@@ -1,5 +1,7 @@
+parameters:
+    locale:            en
+
 imports:
-    - { resource: parameters.yml }
     - { resource: security.yml }
 
 framework:
@@ -29,6 +31,7 @@ twig:
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
+    read_from: '%kernel.root_dir%/../html'
     use_controller: false
     #bundles:        [ ]
     #java: /usr/bin/java
@@ -42,16 +45,7 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%
-        user:     %database_user%
-        password: %database_password%
-        charset:  UTF8
-        # if using pdo_sqlite as your database driver, add the path in parameters.yml
-        # e.g. database_path: %kernel.root_dir%/data/data.db3
-        # path:     %database_path%
+        url:   %database_url%
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
@@ -59,8 +53,4 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-    spool:     { type: memory }
+    url: %mailer_url%

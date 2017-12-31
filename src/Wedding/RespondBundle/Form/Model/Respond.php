@@ -12,50 +12,50 @@ class Respond
      * @Assert\NotNull()
      */
     protected $attending;
-    
+
     /**
      * @Assert\NotBlank()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     protected $name;
-    
+
     /**
      * @Assert\Email()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     protected $email;
-    
+
     /**
      * @Assert\NotBlank()
-     * @Assert\MaxLength(20)
+     * @Assert\Length(max="20")
      */
     protected $phone;
-    
+
     /**
      * Adults
      *
      * @Assert\Type(type="numeric")
      */
     protected $adults;
-    
+
     /**
      * Children
      *
      * @Assert\Type(type="numeric")
      */
     protected $children;
-    
+
     /**
      * Song List
      */
     protected $song_list;
-    
+
     /**
      * Note
      */
     protected $note;
-    
-    
+
+
     public function setAttending($attending)
     {
         $this->attending = $attending;
@@ -75,7 +75,7 @@ class Respond
     {
         return $this->name;
     }
-    
+
     public function setEmail($email)
     {
         $this->email = $email;
@@ -85,7 +85,7 @@ class Respond
     {
         return $this->email;
     }
-    
+
     public function setPhone($phone)
     {
         $this->phone = $phone;
@@ -95,7 +95,7 @@ class Respond
     {
         return $this->phone;
     }
-    
+
     public function setAdults($adults)
     {
         $this->adults = $adults;
@@ -105,7 +105,7 @@ class Respond
     {
         return $this->adults;
     }
-    
+
     public function setChildren($children)
     {
         $this->children = $children;
@@ -115,7 +115,7 @@ class Respond
     {
         return $this->children;
     }
-    
+
     public function setSongList($song_list)
     {
         $this->song_list = $song_list;
@@ -125,7 +125,7 @@ class Respond
     {
         return $this->song_list;
     }
-    
+
     public function setNote($note)
     {
         $this->note = $note;
@@ -135,5 +135,5 @@ class Respond
     {
         return $this->note;
     }
-    
+
 }

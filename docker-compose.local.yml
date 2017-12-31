@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    links:
+      - smtp
+  cache:
+    ports:
+      - 8888:80
+  smtp:
+    image: sj26/mailcatcher
+    ports:
+      - 1080:1080
+volumes:
+  db-data:
