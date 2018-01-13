@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    restart: always
+    networks:
+      - default
+      - database
+  cache:
+    restart: always
+    networks:
+      - default
+      - ingress
+networks:
+  ingress:
+    external:
+      name: ingress
+  database:
+    external:
+      name: database
