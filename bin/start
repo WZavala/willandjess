@@ -1,3 +1,5 @@
 #!/bin/sh
 ../app/console cache:clear \
+  && chown -R www-data:www-data ../app/logs \
+  && chown -R www-data:www-data ../app/cache \
   && apache2-foreground
